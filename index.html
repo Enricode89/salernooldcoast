@@ -271,6 +271,7 @@ header.inner{background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-fi
 .panel{border:1px solid var(--line);padding:30px;background:var(--card)}
 .panel .row{padding:18px 0;border-bottom:1px solid var(--line)}
 .panel .row:first-child{padding-top:0}
+.panel .row:last-child{border-bottom:0;padding-bottom:0}
 .panel .lbl{font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:10px}
 .panel .val{font-family:"Cormorant Garamond",serif;font-size:1.5rem}
 .step{display:flex;align-items:center;gap:16px}
@@ -429,8 +430,6 @@ header.inner{background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-fi
         <div class="row"><span class="lbl" data-t="dates"></span><div class="val" id="pDates">—</div></div>
         <div class="row"><span class="lbl" data-t="guests"></span><div class="step"><button id="gM">−</button><b id="gN">2</b><button id="gP">+</button></div></div>
         <div class="row"><span class="lbl" data-t="sort"></span><div class="sorts" id="sorts"><button data-s="price" class="on" data-t="s_price"></button><button data-s="guests" data-t="s_guests"></button><button data-s="rating" data-t="s_rating"></button></div></div>
-        <button class="link" id="clear" style="margin-top:20px"><span data-t="clear"></span></button>
-        <div class="note" data-t="note"></div>
       </div>
     </div>
     <div class="cmp-h"><h2 data-t="cmp_h"></h2><span id="cmpNote"></span></div>
@@ -814,7 +813,6 @@ $("cPrev").onclick=()=>{bk.view=new Date(bk.view.getFullYear(),bk.view.getMonth(
 $("cNext").onclick=()=>{bk.view=new Date(bk.view.getFullYear(),bk.view.getMonth()+1,1);renderPrenota();};
 $("gM").onclick=()=>{bk.g=Math.max(1,bk.g-1);renderPrenota();};
 $("gP").onclick=()=>{bk.g=Math.min(Math.max(...APTS.map(a=>a.ospiti)),bk.g+1);renderPrenota();};
-$("clear").onclick=()=>{bk.ci=bk.co=null;renderPrenota();};
 
 const hdr=$("hdr");let tick=false;
 function onScroll(){
