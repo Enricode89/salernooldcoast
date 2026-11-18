@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salerno Luxury Apartments — Appartamenti nel centro storico di Salerno</title>
+<meta name="description" content="Quattro appartamenti nel centro storico di Salerno: La Dolce Vita, Amalfi Gate, Duomo e Positano Gate. Confronta i prezzi e prenota direttamente.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+/* ===== temi ===== */
+:root,[data-theme="light"]{
+  --bg:#f7f3ec; --bg2:#efe8dc; --ink:#1c1a17; --ink2:#5d564c; --muted:#8a8275;
+  --acc:#9a7b4f; --acc2:#b48a5a; --line:rgba(28,26,23,.14); --veil:rgba(14,12,10,.42);
+  --btn-ink:#fff; --card:#fbf8f3; --grad:linear-gradient(90deg,#9a7b4f,#b48a5a);
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Jost,system-ui,sans-serif;font-weight:300;color:var(--ink);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased;transition:background .6s,color .6s}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.serif{font-family:"Cormorant Garamond",Georgia,serif}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.caps{font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;font-weight:400}
+.acc{color:var(--acc)}
+.gtext{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ph{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--c2),var(--c1))}
+.ph img{position:absolute;inset:0}
+
+/* ===== header ===== */
+header{position:fixed;inset:0 0 auto;z-index:50;color:#f5efe4;transition:background .5s,color .5s,padding .5s,border-color .5s;border-bottom:1px solid transparent}
+header .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:88px;transition:height .5s}
+header.solid{background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--ink);border-color:var(--line)}
+header.solid .wrap{height:70px}
+.hnav{display:flex;gap:30px}
+.hnav a{position:relative;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase}
+.hnav a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s cubic-bezier(.7,0,.2,1)}
+.hnav a:hover::after{transform:scaleX(1);transform-origin:left}
+.brand{text-align:center;line-height:1}
+.brand b{display:block;font-family:"Cormorant Garamond",serif;font-weight:400;font-size:1.55rem;letter-spacing:.22em;text-transform:uppercase}
+.brand i{display:block;font-family:"Cormorant Garamond",serif;font-size:.95rem;letter-spacing:.08em;margin-top:4px;opacity:.85}
+.hright{display:flex;justify-content:flex-end;align-items:center;gap:22px}
+.langs{display:flex;gap:6px}
+.langs button{width:22px;height:15px;border-radius:2px;overflow:hidden;opacity:.5;transition:opacity .3s,box-shadow .3s;padding:0}
+.langs button svg{display:block;width:100%;height:100%}
+.langs button.on,.langs button:hover{opacity:1;box-shadow:0 0 0 1px currentColor}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:15px 30px;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;font-weight:400;border:1px solid currentColor;transition:background .4s,color .4s,border-color .4s}
+.btn:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+header .btn{padding:11px 20px}
+.btn-solid{background:var(--grad);border-color:transparent;color:var(--btn-ink)}
+.btn-solid:hover{background:var(--ink);color:var(--bg)}
+.btn-light{color:#f5efe4}
+.btn-light:hover{background:#f5efe4;color:#14110d;border-color:#f5efe4}
+.btn .arr{display:inline-block;width:26px;height:1px;background:currentColor;position:relative;transition:width .4s}
+.btn .arr::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.btn:hover .arr{width:38px}
+
+/* ===== hero ===== */
+.hero{position:relative;height:100vh;min-height:640px;color:#f5efe4;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 2.2s ease}
+.slide.on{opacity:1}
+.slide .ph{position:absolute;inset:0}
+.slide img{transform:scale(1.16)}
+.slide.on img{animation:kb 10s cubic-bezier(.2,.6,.3,1) forwards}
+@keyframes kb{from{transform:scale(1.16)}to{transform:scale(1.02)}}
+.veil{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,.05),var(--veil) 75%),linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,0) 30%,rgba(0,0,0,0) 60%,rgba(0,0,0,.55))}
+.hero-c{position:relative;z-index:2;padding:0 24px;max-width:980px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:clamp(3rem,8.5vw,7.4rem);line-height:.98;letter-spacing:-.01em;margin:22px 0 28px}
+.hero h1 em{font-style:italic;font-weight:300;display:block}
+.rule{width:0;height:1px;background:var(--grad);margin:0 auto 34px;transition:width 1.8s .6s cubic-bezier(.7,0,.2,1)}
+.in .rule,.rule.in{width:120px}
+.hero .caps{opacity:.9}
+.hbot{position:absolute;z-index:3;left:0;right:0;bottom:38px}
+.hbot .wrap{display:flex;justify-content:space-between;align-items:flex-end}
+.counter{font-family:"Cormorant Garamond",serif;font-size:1.05rem;text-align:left}
+.counter b{font-weight:400;font-size:2rem;margin-right:6px}
+.counter small{display:block;font-family:Jost,sans-serif;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;opacity:.8;margin-top:6px;min-height:1em;transition:opacity .6s}
+.prog{display:flex;gap:10px}
+.prog button{width:46px;height:20px;position:relative}
+.prog button::before,.prog button::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(255,255,255,.3)}
+.prog button::after{background:#f5efe4;transform:scaleX(0);transform-origin:left}
+.prog button.on::after{animation:fill 7s linear forwards}
+@keyframes fill{to{transform:scaleX(1)}}
+.scroll{position:absolute;z-index:3;left:50%;bottom:30px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;opacity:.85}
+.scroll i{width:1px;height:46px;background:rgba(255,255,255,.25);position:relative;overflow:hidden}
+.scroll i::after{content:"";position:absolute;left:0;top:-50%;width:1px;height:50%;background:#f5efe4;animation:drop 2.2s cubic-bezier(.7,0,.3,1) infinite}
+@keyframes drop{to{top:100%}}
+
+/* ===== reveal ===== */
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1.3s cubic-bezier(.2,.7,.2,1),transform 1.3s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.fade{opacity:0;transition:opacity 1.6s ease}.fade.in{opacity:1}
+.d1{transition-delay:.15s}.d2{transition-delay:.3s}.d3{transition-delay:.45s}.d4{transition-delay:.6s}.d5{transition-delay:.75s}
+
+/* ===== manifesto ===== */
+.manifesto{padding-top:150px;padding-bottom:110px;text-align:center}
+.manifesto p{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:clamp(1.7rem,3.4vw,2.7rem);line-height:1.35;max-width:24em;margin:26px auto 0;color:var(--ink)}
+.manifesto p em{color:var(--acc)}
+.orn{display:flex;align-items:center;justify-content:center;gap:16px;color:var(--acc)}
+.orn::before,.orn::after{content:"";width:46px;height:1px;background:currentColor;opacity:.6}
+
+/* ===== stats ===== */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats div{padding:52px 20px;text-align:center}
+.stats div+div{border-left:1px solid var(--line)}
+.stats b{display:block;font-family:"Cormorant Garamond",serif;font-weight:300;font-size:clamp(3.2rem,6vw,4.8rem);line-height:1}
+.stats span{display:block;margin-top:12px;color:var(--muted)}
+
+/* ===== residenze ===== */
+.sec-h{text-align:center;padding-top:140px;padding-bottom:30px}
+.sec-h h2{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;margin-top:20px}
+.sec-h h2 em{font-style:italic}
+.apt{display:grid;grid-template-columns:7fr 5fr;gap:90px;align-items:center;padding:90px 0}
+.apt:nth-child(even){grid-template-columns:5fr 7fr}
+.apt:nth-child(even) .media{order:2}
+.media{position:relative}
+.clip{position:relative;aspect-ratio:5/4;overflow:hidden;clip-path:inset(10% 8% 10% 8%);transition:clip-path 1.6s cubic-bezier(.7,0,.2,1)}
+.clip.in{clip-path:inset(0 0 0 0)}
+.clip .plx{position:absolute;inset:-9% 0;will-change:transform}
+.clip .ph{position:absolute;inset:0}
+.clip img{transform:scale(1.28);transition:transform 2.2s cubic-bezier(.2,.7,.2,1)}
+.clip.in img{transform:scale(1)}
+.media:hover .clip.in img{transform:scale(1.04)}
+.thumbs{position:absolute;bottom:-34px;display:flex;gap:10px}
+.apt:nth-child(odd) .thumbs{right:-30px}
+.apt:nth-child(even) .thumbs{left:-30px}
+.thumbs .ph{width:120px;aspect-ratio:1;border:6px solid var(--bg);transition:border-color .6s}
+.num{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:6.5rem;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--acc);opacity:.75}
+.apt h3{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:clamp(2.4rem,4.4vw,3.6rem);line-height:1;margin:18px 0 14px}
+.hair{height:1px;background:var(--line);margin:24px 0;transform:scaleX(0);transform-origin:left;transition:transform 1.4s .3s cubic-bezier(.7,0,.2,1)}
+.hair.in{transform:scaleX(1)}
+.apt p{color:var(--ink2);max-width:34em}
+.meta{display:flex;flex-wrap:wrap;gap:8px 26px;margin:26px 0 30px;font-size:.84rem;color:var(--ink2)}
+.meta b{font-weight:400;color:var(--ink)}
+.price{display:flex;align-items:baseline;gap:10px;margin-bottom:30px}
+.price small{color:var(--muted)}
+.price b{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:2.2rem;line-height:1}
+.link{display:inline-flex;align-items:center;gap:14px;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;padding-bottom:8px;position:relative}
+.link::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:var(--grad);transform-origin:left;transition:transform .6s cubic-bezier(.7,0,.2,1)}
+.link:hover::after{transform:scaleX(.35)}
+.link .arr{display:inline-block;width:26px;height:1px;background:currentColor;position:relative;transition:width .4s}
+.link .arr::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.link:hover .arr{width:40px}
+
+/* ===== banner ===== */
+.banner{position:relative;height:88vh;min-height:520px;margin-top:120px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;color:#f5efe4}
+.banner .plx{position:absolute;inset:-12% 0}
+.banner .ph{position:absolute;inset:0}
+.banner .veil{background:var(--veil)}
+.banner .in-c{position:relative;z-index:2;padding:0 24px}
+.banner h2{font-family:"Cormorant Garamond",serif;font-weight:300;font-style:italic;font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.12;max-width:16em;margin:22px auto 40px}
+
+/* ===== footer ===== */
+footer{padding:110px 0 120px;text-align:center}
+footer .brand{color:var(--ink)}
+footer .brand b{font-size:2rem}
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin:60px 0 50px;padding:44px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fgrid .caps{color:var(--acc);margin-bottom:12px;display:block}
+.fgrid a,.fgrid span.v{display:block;font-size:.95rem;color:var(--ink2)}
+.fgrid a:hover{color:var(--ink)}
+.legal{font-size:.72rem;color:var(--muted);letter-spacing:.08em}
+
+
+@media (max-width:980px){
+  .hnav{display:none}
+  header .wrap{grid-template-columns:auto 1fr;}
+  .brand{text-align:left}
+  .brand b{font-size:1.15rem;letter-spacing:.16em}
+  .hright .btn{display:none}
+  .apt,.apt:nth-child(even){grid-template-columns:1fr;gap:56px;padding:60px 0}
+  .apt:nth-child(even) .media{order:0}
+  .apt:nth-child(odd) .thumbs,.apt:nth-child(even) .thumbs{right:12px;left:auto}
+  .thumbs .ph{width:84px}
+  .num{font-size:4.6rem}
+  .stats div{padding:34px 4px}
+  .stats b{font-size:2.6rem}
+  .stats span{font-size:.56rem;letter-spacing:.18em}
+  .fgrid{grid-template-columns:1fr}
+  .manifesto{padding-top:110px;padding-bottom:80px}
+  .sec-h{padding-top:100px;padding-bottom:10px}
+  .hbot{bottom:84px}
+  .scroll{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .rv,.fade,.clip,.clip img,.hair,.rule{transition:none!important;opacity:1;transform:none;clip-path:none}
+  .rule{width:120px}.hair{transform:none}
+  .slide.on img,.prog button.on::after,.scroll i::after{animation:none}
+}
+
+
+/* ===== pagine ===== */
+.page{display:none}
+.page.show{display:block;animation:pg .7s ease}
+@keyframes pg{from{opacity:0}}
+header.inner{background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--ink);border-color:var(--line)}
+.hnav a.on::after{transform:scaleX(1)}
+.ptop{padding-top:170px;text-align:center}
+.ptop h1{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:clamp(2.8rem,6vw,5rem);line-height:1;margin-top:22px}
+.ptop h1 em{font-style:italic}
+.ptop p{max-width:40em;margin:22px auto 0;color:var(--ink2)}
+
+/* home: anteprima residenze */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;padding-top:40px}
+.card{display:block;color:inherit}
+.card .clip{aspect-ratio:3/4}
+.card h3{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:1.9rem;margin:20px 0 4px}
+.card .caps{color:var(--muted);font-size:.62rem}
+.card .from{margin-top:10px;font-size:.84rem;color:var(--ink2)}
+.card .from b{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:1.35rem;color:var(--ink)}
+.card:hover .clip.in img{transform:scale(1.05)}
+
+/* strutture */
+.snav{position:sticky;top:70px;z-index:20;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-top:60px}
+.snav .wrap{display:flex;gap:34px;justify-content:center;overflow-x:auto;scrollbar-width:none}
+.snav a{padding:18px 0;white-space:nowrap;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid transparent}
+.snav a.on{color:var(--acc);border-color:var(--acc)}
+.res{padding:110px 0 40px;border-bottom:1px solid var(--line);scroll-margin-top:130px}
+.res-h{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:40px}
+.res-h h2{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:clamp(2.6rem,5vw,4.2rem);line-height:1;margin-top:14px}
+.gal{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;aspect-ratio:2/1}
+.gal .g{position:relative;overflow:hidden;cursor:zoom-in}
+.gal .g:first-child{grid-row:span 2}
+.gal .g .ph{position:absolute;inset:0}
+.gal .g img{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.gal .g:hover img{transform:scale(1.05)}
+.gal .more{position:absolute;right:14px;bottom:14px;z-index:2;background:rgba(247,243,236,.92);color:#1c1a17;padding:8px 14px;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase}
+.res-b{display:grid;grid-template-columns:1.3fr 1fr;gap:80px;margin-top:60px}
+.res-b p{color:var(--ink2);font-size:1.02rem}
+.specs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:34px 0}
+.specs div{padding:22px 6px;text-align:center}
+.specs div+div{border-left:1px solid var(--line)}
+.specs b{display:block;font-family:"Cormorant Garamond",serif;font-weight:300;font-size:2.2rem;line-height:1;color:var(--acc)}
+.specs span{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.dot h4{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;font-weight:400;color:var(--acc);margin-bottom:18px}
+.dot ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px 20px}
+.dot li{display:flex;align-items:center;gap:12px;font-size:.92rem;color:var(--ink2)}
+.dot li svg{flex:none;width:20px;height:20px;stroke:var(--acc);fill:none;stroke-width:1.3}
+.side-book{border:1px solid var(--line);padding:30px;margin-top:34px}
+.side-book .price{margin-bottom:22px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:300;background:rgba(14,12,10,.94);display:flex;align-items:center;justify-content:center}
+.lb[hidden]{display:none}
+.lb .ph{position:relative;width:min(1200px,92vw);height:min(80vh,800px);background:none}
+.lb img{object-fit:contain}
+.lb button{position:absolute;color:#f5efe4;font-size:2rem;width:56px;height:56px}
+.lb .x{top:16px;right:16px}.lb .p{left:10px;top:50%;transform:translateY(-50%)}.lb .n{right:10px;top:50%;transform:translateY(-50%)}
+.lb .c{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#cfc6b6;font-size:.7rem;letter-spacing:.3em}
+
+/* prenota */
+.bk-top{display:grid;grid-template-columns:1.6fr 1fr;gap:40px;align-items:start;margin-top:60px}
+.calbox{border:1px solid var(--line);padding:30px;background:var(--card)}
+.cal-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.cal-nav button{width:38px;height:38px;border:1px solid var(--line);font-size:1.1rem}
+.cal-nav button:disabled{opacity:.25}
+.cal-nav span{font-size:.8rem;color:var(--ink2)}
+.months{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.month h4{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:1.35rem;text-align:center;margin-bottom:6px;text-transform:capitalize}
+.dow,.days{display:grid;grid-template-columns:repeat(7,1fr)}
+.dow span{font-size:.6rem;letter-spacing:.14em;text-align:center;color:var(--muted);padding:4px 0}
+.day{height:44px;display:flex;align-items:center;justify-content:center}
+.day button{width:100%;height:100%;font-size:.88rem;transition:background .2s}
+.day button:hover{background:color-mix(in srgb,var(--acc) 16%,transparent)}
+.day.off button{color:var(--muted);opacity:.35;pointer-events:none;text-decoration:line-through}
+.day.in{background:color-mix(in srgb,var(--acc) 13%,transparent)}
+.day.s button,.day.e button{background:var(--grad);color:#fff}
+.panel{border:1px solid var(--line);padding:30px;background:var(--card)}
+.panel .row{padding:18px 0;border-bottom:1px solid var(--line)}
+.panel .row:first-child{padding-top:0}
+.panel .lbl{font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:10px}
+.panel .val{font-family:"Cormorant Garamond",serif;font-size:1.5rem}
+.step{display:flex;align-items:center;gap:16px}
+.step button{width:36px;height:36px;border:1px solid var(--line);font-size:1.1rem}
+.step b{font-weight:400;min-width:22px;text-align:center;font-size:1.2rem}
+.sorts{display:flex;gap:18px;flex-wrap:wrap}
+.sorts button{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);padding-bottom:6px;border-bottom:1px solid transparent}
+.sorts button.on{color:var(--acc);border-color:var(--acc)}
+.panel .note{font-size:.76rem;color:var(--muted);margin-top:18px}
+.cmp-h{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;margin:90px 0 26px}
+.cmp-h h2{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:clamp(2.2rem,4vw,3.2rem)}
+.cmp-h span{font-size:.84rem;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:repeat(4,minmax(250px,1fr));gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px}
+.cc{position:relative;border:1px solid var(--line);background:var(--card);scroll-snap-align:start;display:flex;flex-direction:column;transition:border-color .4s,opacity .4s}
+.cc.best{border-color:var(--acc)}
+.cc.focus{box-shadow:0 0 0 1px var(--acc)}
+.cc.na .cimg,.cc.na .cbody>*:not(.flag){opacity:.4}
+.cimg{position:relative;aspect-ratio:4/3;overflow:hidden}
+.cimg .ph{position:absolute;inset:0}
+.badge{position:absolute;top:14px;left:14px;z-index:2;background:var(--grad);color:#fff;font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;padding:7px 12px}
+.badge.no{background:#6f675c}
+.cbody{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+.cbody h3{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:1.9rem;line-height:1}
+.cbody .caps{font-size:.58rem;color:var(--muted);margin-top:8px}
+.ctot{padding:20px 0 16px;border-bottom:1px solid var(--line)}
+.ctot b{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:2.3rem;line-height:1;color:var(--acc)}
+.ctot small{display:block;font-size:.76rem;color:var(--muted);margin-top:6px}
+.crows{display:flex;flex-direction:column;margin:6px 0 20px}
+.crow{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--line);font-size:.82rem}
+.crow span:first-child{color:var(--muted)}
+.crow .y{color:var(--acc)}.crow .n{color:var(--muted);opacity:.5}
+.flag{font-size:.76rem;color:#9a5a3a;margin:12px 0 0}
+.cact{margin-top:auto;display:flex;flex-direction:column;gap:12px}
+.cact .btn{justify-content:center;padding:15px 14px;letter-spacing:.16em;white-space:nowrap}
+.cact .btn[aria-disabled="true"]{opacity:.35;pointer-events:none}
+.cact .link{align-self:center}
+
+.wa{position:fixed;right:20px;bottom:20px;z-index:90;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#1c1a17;color:#e3c88a;border:1px solid var(--acc);box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .3s,background .3s,color .3s}
+.wa:hover{transform:scale(1.07);background:var(--acc);color:#fff}
+.mnav{display:none}
+.prog button{width:28px}
+
+@media (max-width:980px){
+  .cards{grid-template-columns:1fr 1fr;gap:18px}
+  .card h3{font-size:1.5rem}
+  .gal{grid-template-columns:1fr 1fr;grid-template-rows:auto;aspect-ratio:auto}
+  .gal .g{aspect-ratio:1}
+  .gal .g:first-child{grid-column:span 2;grid-row:auto;aspect-ratio:4/3}
+  .gal .g:nth-child(n+4){display:none}
+  .res{padding:70px 0 30px}
+  .res-b{grid-template-columns:1fr;gap:30px;margin-top:36px}
+  .dot ul{grid-template-columns:1fr}
+  .bk-top{grid-template-columns:1fr;gap:20px;margin-top:40px}
+  .calbox,.panel{padding:20px 16px}
+  .months{grid-template-columns:1fr}
+  .month+.month{display:none}
+  .cmp{grid-template-columns:repeat(4,84%);margin:0 -28px;padding:0 28px 12px;scroll-padding:28px}
+  .ptop{padding-top:130px}
+  .snav{top:70px}
+  .mnav{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:95;background:color-mix(in srgb,var(--bg) 96%,transparent);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+  .mnav a{flex:1;text-align:center;padding:15px 0 calc(15px + env(safe-area-inset-bottom));font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  .mnav a.on{color:var(--acc)}
+  .wa{bottom:72px;right:14px;width:50px;height:50px}
+  footer{padding-bottom:140px}
+  footer .brand{text-align:center}
+  footer .brand b{font-size:1.35rem}
+  .hbot{bottom:70px}
+  .prog button{width:16px}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr"><div class="wrap">
+  <nav class="hnav"><a href="#home" data-p="home" data-t="m0"></a><a href="#strutture" data-p="strutture" data-t="m1"></a><a href="#prenota" data-p="prenota" data-t="m2"></a></nav>
+  <a class="brand" href="#home"><b>Salerno Luxury</b><i>Apartments</i></a>
+  <div class="hright"><div class="langs"></div><a class="btn" href="#prenota" data-t="m2"></a></div>
+</div></header>
+
+<main>
+<!-- ================= HOME ================= -->
+<div class="page" id="p-home">
+  <section class="hero">
+    <div id="slides"></div>
+    <div class="veil"></div>
+    <div class="hero-c">
+      <div class="caps rv" data-t="eye"></div>
+      <h1 class="rv d1" data-t="h1" data-h></h1>
+      <div class="rule"></div>
+      <a class="btn btn-light rv d3" href="#prenota"><span data-t="check"></span><span class="arr"></span></a>
+    </div>
+    <div class="hbot"><div class="wrap">
+      <div class="counter"><b id="cNum">01</b>/ <span id="cTot">08</span><small id="cName"></small></div>
+      <div class="prog" id="prog"></div>
+    </div></div>
+    <div class="scroll"><span data-t="scroll"></span><i></i></div>
+  </section>
+
+  <section class="manifesto wrap">
+    <div class="caps orn rv" data-t="man_eye"></div>
+    <p class="rv d1" data-t="man" data-h></p>
+  </section>
+
+  <section class="wrap">
+    <div class="stats">
+      <div class="rv"><b class="gtext" data-count="4.9" data-dec="1">0</b><span class="caps" data-t="s1"></span></div>
+      <div class="rv d1"><b class="gtext" data-count="1249" data-dec="0">0</b><span class="caps" data-t="s2"></span></div>
+      <div class="rv d2"><b class="gtext" data-count="10" data-dec="0">0</b><span class="caps" data-t="s3"></span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h wrap">
+      <div class="caps orn rv" data-t="apts"></div>
+      <h2 class="rv d1" data-t="choose" data-h></h2>
+    </div>
+    <div class="wrap"><div class="cards" id="cards"></div></div>
+  </section>
+
+  <section class="banner">
+    <div class="plx" id="bannerImg"></div>
+    <div class="veil"></div>
+    <div class="in-c">
+      <div class="caps rv" data-t="avgshort"></div>
+      <h2 class="rv d1" data-t="q"></h2>
+      <a class="btn btn-light rv d2" href="#prenota"><span data-t="cmpBtn"></span><span class="arr"></span></a>
+    </div>
+  </section>
+</div>
+
+<!-- ================= STRUTTURE ================= -->
+<div class="page" id="p-strutture">
+  <section class="ptop wrap">
+    <div class="caps orn rv" data-t="apts"></div>
+    <h1 class="rv d1" data-t="str_h1" data-h></h1>
+    <p class="rv d2" data-t="str_p"></p>
+  </section>
+  <nav class="snav"><div class="wrap" id="snav"></div></nav>
+  <div class="wrap" id="resList"></div>
+</div>
+
+<!-- ================= PRENOTA ================= -->
+<div class="page" id="p-prenota">
+  <section class="ptop wrap">
+    <div class="caps orn rv" data-t="bk_eye"></div>
+    <h1 class="rv d1" data-t="bk_h1" data-h></h1>
+    <p class="rv d2" data-t="bk_p"></p>
+  </section>
+  <section class="wrap">
+    <div class="bk-top">
+      <div class="calbox">
+        <div class="cal-nav"><button id="cPrev" aria-label="‹">‹</button><span id="cHint"></span><button id="cNext" aria-label="›">›</button></div>
+        <div class="months" id="cMonths"></div>
+      </div>
+      <div class="panel">
+        <div class="row"><span class="lbl" data-t="dates"></span><div class="val" id="pDates">—</div></div>
+        <div class="row"><span class="lbl" data-t="guests"></span><div class="step"><button id="gM">−</button><b id="gN">2</b><button id="gP">+</button></div></div>
+        <div class="row"><span class="lbl" data-t="sort"></span><div class="sorts" id="sorts"><button data-s="price" class="on" data-t="s_price"></button><button data-s="guests" data-t="s_guests"></button><button data-s="rating" data-t="s_rating"></button></div></div>
+        <button class="link" id="clear" style="margin-top:20px"><span data-t="clear"></span></button>
+        <div class="note" data-t="note"></div>
+      </div>
+    </div>
+    <div class="cmp-h"><h2 data-t="cmp_h"></h2><span id="cmpNote"></span></div>
+    <div class="cmp" id="cmp"></div>
+  </section>
+</div>
+</main>
+
+<footer id="contatti"><div class="wrap">
+  <a class="brand" href="#home"><b>Salerno Luxury</b><i>Apartments</i></a>
+  <div class="fgrid">
+    <div><span class="caps" data-t="m4"></span><a href="tel:+393381885843">+39 338 188 5843</a><a href="https://wa.me/393381885843" target="_blank" rel="noopener">WhatsApp</a></div>
+    <div><span class="caps">Email</span><a href="mailto:luxuryapartmentsalerno@gmail.com">luxuryapartmentsalerno@gmail.com</a></div>
+    <div><span class="caps" data-t="where"></span><span class="v" data-t="addr"></span></div>
+  </div>
+  <div class="legal">© <span id="yr"></span> Salerno Luxury Apartments · luxuryapartmentsalerno.com</div>
+</div></footer>
+
+<nav class="mnav" id="mnav"><a href="#home" data-p="home" data-t="m0"></a><a href="#strutture" data-p="strutture" data-t="m1"></a><a href="#prenota" data-p="prenota" data-t="m2"></a></nav>
+
+<a class="wa" id="waFab" href="https://wa.me/393381885843" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg></a>
+
+<div class="lb" id="lb" hidden><button class="x" aria-label="×">×</button><button class="p" aria-label="‹">‹</button><div id="lbImg"></div><button class="n" aria-label="›">›</button><div class="c" id="lbC"></div></div>
+
+<script>
+const IMG = (u,w)=> u.split("?")[0] + "?im_w=" + (w||1200);
+const APTS = [
+ { id:"minerva", nome:"La Dolce Vita",
+   tag:{it:"Soffitti alti · finiture di pregio",en:"High ceilings · refined finishes",fr:"Hauts plafonds · finitions raffinées",de:"Hohe Decken · edle Ausstattung"},
+   desc:{it:"Ampio appartamento di prestigio con soffitti alti, finiture di pregio e tecnologia moderna, in un palazzo ristrutturato del centro storico vicino al Giardino della Minerva.",
+         en:"Spacious prestige apartment with high ceilings, refined finishes and modern tech, in a renovated old-town building near the Minerva Garden.",fr:"Appartement de prestige spacieux aux hauts plafonds, finitions raffinées et technologie moderne, dans un immeuble rénové de la vieille ville près du Jardin de la Minerve.",de:"Großzügige Prestige-Wohnung mit hohen Decken, edler Ausstattung und moderner Technik in einem renovierten Altstadthaus nahe dem Minerva-Garten."},
+   ospiti:4, camere:1, letti:1, bagni:1, rating:5.0, reviews:270,
+   servizi:["wifi","cucina","workspace"],
+   foto:["https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODYxNDI4MTc5OTIxOTE0NzU0/original/c58d812f-0e91-43b4-a4af-7166667527d7.jpeg",
+         "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODYxNDI4MTc5OTIxOTE0NzU0/original/767525de-20a5-44b5-9b5c-b38704a5e9f3.jpeg",
+         "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODYxNDI4MTc5OTIxOTE0NzU0/original/bd41b19d-fa6c-4c09-9ba6-717197612011.jpeg",
+         "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODYxNDI4MTc5OTIxOTE0NzU0/original/738ae534-cdc6-4911-8474-920663b517b3.jpeg",
+         "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODYxNDI4MTc5OTIxOTE0NzU0/original/50cc2ca7-9469-4e31-98f9-e89035787143.jpeg"],
+   colore:["#1f4b6b","#6f9ab4"] },
+ { id:"settecento", nome:"Amalfi Gate",
+   tag:{it:"Palazzo del '700 · 540 recensioni",en:"18th-century palazzo · 540 reviews",fr:"Palais du XVIIIe · 540 avis",de:"Palazzo aus dem 18. Jh. · 540 Bewertungen"},
+   desc:{it:"Appartamento ristrutturato in un palazzo storico del Settecento: camera ampia con matrimoniale e divano letto, bagno grande e cucina separata. A pochi passi da lungomare, Corso Vittorio Emanuele e traghetti.",
+         en:"Renovated apartment in an 18th-century palazzo: large bedroom with double and sofa bed, big bathroom and separate kitchen. Steps from the seafront, Corso Vittorio Emanuele and the ferries.",fr:"Appartement rénové dans un palais du XVIIIe siècle : grande chambre avec lit double et canapé-lit, grande salle de bain et cuisine séparée. À deux pas du front de mer, du Corso Vittorio Emanuele et des ferries.",de:"Renovierte Wohnung in einem Palazzo aus dem 18. Jahrhundert: großes Schlafzimmer mit Doppelbett und Schlafsofa, großes Bad und separate Küche. Wenige Schritte zur Uferpromenade, zum Corso Vittorio Emanuele und zu den Fähren."},
+   ospiti:4, camere:1, letti:2, bagni:1, rating:4.94, reviews:540,
+   servizi:["wifi","cucina","workspace","parcheggio"],
+   foto:["https://a0.muscache.com/im/pictures/69f3a023-4b41-4160-949f-82cd9c8cf787.jpg",
+         "https://a0.muscache.com/im/pictures/8a5387d5-c356-4179-8dd9-05056ed78b0f.jpg",
+         "https://a0.muscache.com/im/pictures/c200b7d9-2ac0-4179-9856-f7855cd3487b.jpg",
+         "https://a0.muscache.com/im/pictures/e9e8d90e-450c-47e4-b98b-a1b1798dca3e.jpg",
+         "https://a0.muscache.com/im/pictures/2c2188b8-b9e4-4004-8517-5b9c8c9108c2.jpg"],
+   colore:["#c4693d","#e7c9a4"] },
+ { id:"ducale", nome:"Duomo",
+   tag:{it:"8 ospiti · 2 balconi sulla piazza",en:"8 guests · 2 balconies on the square",fr:"8 personnes · 2 balcons sur la place",de:"8 Gäste · 2 Balkone zum Platz"},
+   desc:{it:"Grande appartamento con due balconi affacciati sulla piazza principale, due camere, aria condizionata in ogni stanza e ascensore. Vicino a spiaggia e traghetti, ideale per famiglie e gruppi.",
+         en:"Large apartment with two balconies over the main square, two bedrooms, air conditioning in every room and a lift. Close to the beach and ferries, ideal for families and groups.",fr:"Grand appartement avec deux balcons sur la place principale, deux chambres, climatisation dans chaque pièce et ascenseur. Proche de la plage et des ferries, idéal pour familles et groupes.",de:"Große Wohnung mit zwei Balkonen zum Hauptplatz, zwei Schlafzimmern, Klimaanlage in jedem Raum und Aufzug. Nahe Strand und Fähren, ideal für Familien und Gruppen."},
+   ospiti:8, camere:2, letti:4, bagni:1, rating:5.0, reviews:320,
+   servizi:["balcone","ac","ascensore","wifi","cucina","animali"],
+   foto:["https://a0.muscache.com/im/pictures/hosting/Hosting-1612245292815058256/original/84b27bda-49dc-4df1-ade5-79cec844266a.jpeg",
+         "https://a0.muscache.com/im/pictures/hosting/Hosting-1612245292815058256/original/4aae06c1-136f-42de-b86b-cd95f45302b7.jpeg",
+         "https://a0.muscache.com/im/pictures/hosting/Hosting-1612245292815058256/original/5ed55b07-032f-483b-b98f-b92c82fa9b38.jpeg",
+         "https://a0.muscache.com/im/pictures/hosting/Hosting-1612245292815058256/original/a5104923-3a13-4417-8eae-42e2997f70f0.jpeg",
+         "https://a0.muscache.com/im/pictures/hosting/Hosting-1612245292815058256/original/096afbfb-7127-4ac9-adfc-0f4cc17ca57b.jpeg"],
+   colore:["#2f6d5f","#9cc3b4"] },
+ { id:"lungomare", nome:"Positano Gate",
+   tag:{it:"Vicino ai traghetti · 119 recensioni",en:"Near the ferries · 119 reviews",fr:"Près des ferries · 119 avis",de:"Nahe den Fähren · 119 Bewertungen"},
+   desc:{it:"Appartamento elegante e ben arredato in un palazzo di prestigio del centro, a pochi minuti a piedi dal molo dei traghetti per la Costiera, dal lungomare e dalla spiaggia.",
+         en:"Stylish, well-furnished apartment in a prestigious central building, a few minutes' walk from the Amalfi Coast ferry pier, the seafront and the beach.",fr:"Appartement élégant et bien meublé dans un immeuble de prestige du centre, à quelques minutes à pied de l'embarcadère des ferries pour la Côte amalfitaine, du front de mer et de la plage.",de:"Stilvolle, gut eingerichtete Wohnung in einem repräsentativen Gebäude im Zentrum, wenige Gehminuten vom Fähranleger zur Amalfiküste, der Promenade und dem Strand."},
+   ospiti:4, camere:1, letti:2, bagni:1, rating:4.96, reviews:119,
+   servizi:["wifi","cucina","workspace","parcheggio"],
+   foto:["https://a0.muscache.com/im/pictures/miso/Hosting-612760200793423653/original/0fd77066-37d9-4bdb-b448-2804fe09fed6.jpeg",
+         "https://a0.muscache.com/im/pictures/miso/Hosting-612760200793423653/original/0f3fbd74-9c20-4fb6-b542-0e71e6834747.jpeg",
+         "https://a0.muscache.com/im/pictures/miso/Hosting-612760200793423653/original/21ecf592-39f8-4ac0-9337-edeadb5119f5.jpeg",
+         "https://a0.muscache.com/im/pictures/miso/Hosting-612760200793423653/original/8bc29793-d084-4a8f-8d08-00a48e36816c.jpeg",
+         "https://a0.muscache.com/im/pictures/miso/Hosting-612760200793423653/original/f59f000d-e166-40ba-a9c4-8b9f5efb184e.jpeg"],
+   colore:["#6a4c7a","#c9b3d4"] }
+];
+
+
+
+/* =====================================================================
+   CONFIGURAZIONE
+   PREZZI: feriale = notti dom–gio, weekend = notti ven e sab (DA AGGIORNARE)
+   OCCUPATO: periodi non disponibili [arrivo, partenza) "AAAA-MM-GG"
+   ===================================================================== */
+const WA="393381885843";
+const PREZZI={minerva:{feriale:120,weekend:140},settecento:{feriale:110,weekend:130},ducale:{feriale:190,weekend:220},lungomare:{feriale:115,weekend:135}};
+const OCCUPATO={minerva:[],settecento:[],ducale:[],lungomare:[]};
+const MIN_NOTTI=2, TASSA=3;
+
+const ICON={
+ wifi:'<path d="M2 8.5a15 15 0 0 1 20 0M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1"/>',
+ cucina:'<path d="M4 3v8a3 3 0 0 0 6 0V3M7 3v18M17 3c-2 2-3 5-3 8h3v10"/>',
+ workspace:'<rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/>',
+ parcheggio:'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/>',
+ balcone:'<path d="M3 11h18M5 11v9M9 11v9M13 11v9M17 11v9M3 20h18M7 11V4h10v7"/>',
+ ac:'<path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1L19.1 4.9"/>',
+ ascensore:'<rect x="5" y="2" width="14" height="20" rx="1"/><path d="M9 8l3-3 3 3M9 16l3 3 3-3"/>',
+ animali:'<circle cx="6" cy="9" r="2"/><circle cx="18" cy="9" r="2"/><circle cx="9.5" cy="5" r="2"/><circle cx="14.5" cy="5" r="2"/><path d="M8 17c0-3 2-5 4-5s4 2 4 5-2 3-4 3-4 0-4-3z"/>'
+};
+const CMP_KEYS=["balcone","ac","ascensore","parcheggio","workspace","animali"];
+
+const FLAGS={
+ it:'<svg viewBox="0 0 3 2"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg>',
+ en:'<svg viewBox="0 0 60 30"><clipPath id="uk"><path d="M0 0v30h60V0z"/></clipPath><g clip-path="url(#uk)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" stroke="#C8102E" stroke-width="2.4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg>',
+ fr:'<svg viewBox="0 0 3 2"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ed2939"/></svg>',
+ de:'<svg viewBox="0 0 5 3"><rect width="5" height="1" fill="#000"/><rect y="1" width="5" height="1" fill="#dd0000"/><rect y="2" width="5" height="1" fill="#ffce00"/></svg>'
+};
+
+const T={
+ it:{m0:"Home",m1:"Strutture",m2:"Prenota",m4:"Contatti",eye:"Centro storico · Salerno",h1:"Quattro case<em>nel cuore di Salerno</em>",check:"Verifica disponibilità",scroll:"Scorri",
+  man_eye:"La nostra ospitalità",man:"Palazzi storici, soffitti alti e il mare a pochi passi. Quattro appartamenti curati in ogni dettaglio, per vivere <em>Salerno e la Costiera</em> con calma.",
+  s1:"valutazione media",s2:"recensioni",s3:"anni da Superhost",apts:"Le residenze",choose:"Scegli la tua casa <em>a Salerno</em>",
+  avgshort:"4.9 · 10 anni da Superhost",q:"Il modo più semplice per vivere la Costiera Amalfitana da Salerno",cmpBtn:"Confronta e prenota",
+  str_h1:"Le nostre <em>strutture</em>",str_p:"Quattro appartamenti nel centro storico di Salerno, a pochi passi dal lungomare e dai traghetti per la Costiera.",
+  g:"ospiti",r1:"camera",rN:"camere",b1:"letto",bN:"letti",ba:"bagno",from:"da",night:"/ notte",reviews:"recensioni",dot:"Dotazioni",photos:"foto",
+  sp_g:"Ospiti",sp_r:"Camere",sp_b:"Letti",sp_ba:"Bagni",book:"Prenota",info:"Chiedi su WhatsApp",
+  a_wifi:"Wi-Fi",a_cucina:"Cucina",a_workspace:"Spazio di lavoro",a_parcheggio:"Parcheggio gratuito in strada",a_balcone:"Balconi sulla piazza",a_ac:"Aria condizionata",a_ascensore:"Ascensore",a_animali:"Animali ammessi",
+  bk_eye:"Prenota direttamente",bk_h1:"Scegli le date <em>e confronta</em>",bk_p:"Seleziona arrivo e partenza: vedi subito quali strutture sono disponibili e il prezzo totale di ognuna, una accanto all'altra.",
+  dates:"Date",guests:"Ospiti",sort:"Ordina per",s_price:"Prezzo",s_guests:"Ospiti",s_rating:"Valutazione",clear:"Cancella date",
+  note:"Prezzi indicativi. Alessandro conferma la disponibilità su WhatsApp.",pick_in:"Scegli la data di arrivo",pick_out:"Ora scegli la partenza",
+  cmp_h:"Confronto strutture",noDates:"Scegli le date per vedere il totale",forDates:"Prezzi per",nights:"notti",night1:"notte",avg:"media",tax:"+ tassa di soggiorno",
+  best:"Miglior prezzo",na:"Non disponibile",tooMany:"Troppi ospiti",minN:"Soggiorno minimo {n} notti",req:"Richiedi su WhatsApp",details:"Dettagli",
+  r_g:"Ospiti max",r_rb:"Camere / bagni",r_rt:"Valutazione",where:"Dove siamo",addr:"Centro storico, Salerno",
+  waInfo:"Ciao Alessandro! Vorrei informazioni su {apt}.",waMsg:"Ciao Alessandro! Vorrei prenotare {apt} dal {ci} al {co} ({n} notti) per {g} ospiti. Totale indicato sul sito: {tot} €. È disponibile?",waGen:"Ciao Alessandro! Vorrei informazioni sugli appartamenti Salerno Luxury Apartments."},
+ en:{m0:"Home",m1:"Apartments",m2:"Book",m4:"Contact",eye:"Old town · Salerno",h1:"Four homes<em>in the heart of Salerno</em>",check:"Check availability",scroll:"Scroll",
+  man_eye:"Our hospitality",man:"Historic palazzi, high ceilings and the sea a few steps away. Four apartments cared for in every detail, to enjoy <em>Salerno and the Amalfi Coast</em> at your own pace.",
+  s1:"average rating",s2:"reviews",s3:"years as Superhost",apts:"The residences",choose:"Choose your home <em>in Salerno</em>",
+  avgshort:"4.9 · 10 years as Superhost",q:"The easiest way to experience the Amalfi Coast from Salerno",cmpBtn:"Compare & book",
+  str_h1:"Our <em>apartments</em>",str_p:"Four apartments in Salerno's old town, a few steps from the seafront and the Amalfi Coast ferries.",
+  g:"guests",r1:"bedroom",rN:"bedrooms",b1:"bed",bN:"beds",ba:"bath",from:"from",night:"/ night",reviews:"reviews",dot:"Amenities",photos:"photos",
+  sp_g:"Guests",sp_r:"Bedrooms",sp_b:"Beds",sp_ba:"Baths",book:"Book",info:"Ask on WhatsApp",
+  a_wifi:"Wi-Fi",a_cucina:"Kitchen",a_workspace:"Workspace",a_parcheggio:"Free street parking",a_balcone:"Balconies on the square",a_ac:"Air conditioning",a_ascensore:"Lift",a_animali:"Pets allowed",
+  bk_eye:"Book direct",bk_h1:"Pick your dates <em>and compare</em>",bk_p:"Select check-in and check-out: you'll instantly see which apartments are available and the total price of each, side by side.",
+  dates:"Dates",guests:"Guests",sort:"Sort by",s_price:"Price",s_guests:"Guests",s_rating:"Rating",clear:"Clear dates",
+  note:"Indicative prices. Alessandro confirms availability on WhatsApp.",pick_in:"Choose your check-in date",pick_out:"Now choose check-out",
+  cmp_h:"Compare apartments",noDates:"Choose dates to see the total",forDates:"Prices for",nights:"nights",night1:"night",avg:"avg",tax:"+ tourist tax",
+  best:"Best price",na:"Not available",tooMany:"Too many guests",minN:"Minimum stay {n} nights",req:"Request on WhatsApp",details:"Details",
+  r_g:"Max guests",r_rb:"Bedrooms / baths",r_rt:"Rating",where:"Where we are",addr:"Old town, Salerno",
+  waInfo:"Hi Alessandro! I'd like some information about {apt}.",waMsg:"Hi Alessandro! I'd like to book {apt} from {ci} to {co} ({n} nights) for {g} guests. Total shown on the website: €{tot}. Is it available?",waGen:"Hi Alessandro! I'd like some information about Salerno Luxury Apartments."},
+ fr:{m0:"Accueil",m1:"Logements",m2:"Réserver",m4:"Contact",eye:"Centre historique · Salerne",h1:"Quatre maisons<em>au cœur de Salerne</em>",check:"Voir les disponibilités",scroll:"Défiler",
+  man_eye:"Notre hospitalité",man:"Palais historiques, hauts plafonds et la mer à deux pas. Quatre appartements soignés dans chaque détail, pour vivre <em>Salerne et la Côte amalfitaine</em> en toute sérénité.",
+  s1:"note moyenne",s2:"avis",s3:"ans Superhôte",apts:"Les résidences",choose:"Choisissez votre maison <em>à Salerne</em>",
+  avgshort:"4,9 · 10 ans Superhôte",q:"La façon la plus simple de vivre la Côte amalfitaine depuis Salerne",cmpBtn:"Comparer et réserver",
+  str_h1:"Nos <em>logements</em>",str_p:"Quatre appartements dans le centre historique de Salerne, à deux pas du front de mer et des ferries pour la Côte amalfitaine.",
+  g:"voyageurs",r1:"chambre",rN:"chambres",b1:"lit",bN:"lits",ba:"salle de bain",from:"dès",night:"/ nuit",reviews:"avis",dot:"Équipements",photos:"photos",
+  sp_g:"Voyageurs",sp_r:"Chambres",sp_b:"Lits",sp_ba:"Salles de bain",book:"Réserver",info:"Demander sur WhatsApp",
+  a_wifi:"Wi-Fi",a_cucina:"Cuisine",a_workspace:"Espace de travail",a_parcheggio:"Parking gratuit dans la rue",a_balcone:"Balcons sur la place",a_ac:"Climatisation",a_ascensore:"Ascenseur",a_animali:"Animaux acceptés",
+  bk_eye:"Réservez en direct",bk_h1:"Choisissez vos dates <em>et comparez</em>",bk_p:"Sélectionnez l'arrivée et le départ : vous voyez aussitôt quels logements sont disponibles et le prix total de chacun, côte à côte.",
+  dates:"Dates",guests:"Voyageurs",sort:"Trier par",s_price:"Prix",s_guests:"Voyageurs",s_rating:"Note",clear:"Effacer les dates",
+  note:"Prix indicatifs. Alessandro confirme la disponibilité sur WhatsApp.",pick_in:"Choisissez la date d'arrivée",pick_out:"Choisissez maintenant le départ",
+  cmp_h:"Comparer les logements",noDates:"Choisissez les dates pour voir le total",forDates:"Prix pour",nights:"nuits",night1:"nuit",avg:"moy.",tax:"+ taxe de séjour",
+  best:"Meilleur prix",na:"Non disponible",tooMany:"Trop de voyageurs",minN:"Séjour minimum {n} nuits",req:"Demander sur WhatsApp",details:"Détails",
+  r_g:"Voyageurs max",r_rb:"Chambres / SdB",r_rt:"Note",where:"Où nous trouver",addr:"Centre historique, Salerne",
+  waInfo:"Bonjour Alessandro ! Je souhaite des informations sur {apt}.",waMsg:"Bonjour Alessandro ! Je souhaite réserver {apt} du {ci} au {co} ({n} nuits) pour {g} personnes. Total indiqué sur le site : {tot} €. Est-ce disponible ?",waGen:"Bonjour Alessandro ! Je souhaite des informations sur Salerno Luxury Apartments."},
+ de:{m0:"Start",m1:"Unterkünfte",m2:"Buchen",m4:"Kontakt",eye:"Altstadt · Salerno",h1:"Vier Domizile<em>im Herzen von Salerno</em>",check:"Verfügbarkeit prüfen",scroll:"Scrollen",
+  man_eye:"Unsere Gastfreundschaft",man:"Historische Palazzi, hohe Decken und das Meer nur wenige Schritte entfernt. Vier Wohnungen, mit Liebe zum Detail gepflegt, um <em>Salerno und die Amalfiküste</em> in Ruhe zu erleben.",
+  s1:"Durchschnittsbewertung",s2:"Bewertungen",s3:"Jahre Superhost",apts:"Die Residenzen",choose:"Wählen Sie Ihr Zuhause <em>in Salerno</em>",
+  avgshort:"4,9 · 10 Jahre Superhost",q:"Der einfachste Weg, die Amalfiküste von Salerno aus zu erleben",cmpBtn:"Vergleichen & buchen",
+  str_h1:"Unsere <em>Unterkünfte</em>",str_p:"Vier Wohnungen in der Altstadt von Salerno, wenige Schritte von der Uferpromenade und den Fähren zur Amalfiküste.",
+  g:"Gäste",r1:"Schlafzimmer",rN:"Schlafzimmer",b1:"Bett",bN:"Betten",ba:"Bad",from:"ab",night:"/ Nacht",reviews:"Bewertungen",dot:"Ausstattung",photos:"Fotos",
+  sp_g:"Gäste",sp_r:"Schlafzimmer",sp_b:"Betten",sp_ba:"Bäder",book:"Buchen",info:"Per WhatsApp fragen",
+  a_wifi:"WLAN",a_cucina:"Küche",a_workspace:"Arbeitsplatz",a_parcheggio:"Kostenloses Parken an der Straße",a_balcone:"Balkone zum Platz",a_ac:"Klimaanlage",a_ascensore:"Aufzug",a_animali:"Haustiere erlaubt",
+  bk_eye:"Direkt buchen",bk_h1:"Daten wählen <em>und vergleichen</em>",bk_p:"Wählen Sie An- und Abreise: Sie sehen sofort, welche Wohnungen frei sind und den Gesamtpreis jeder einzelnen, nebeneinander.",
+  dates:"Daten",guests:"Gäste",sort:"Sortieren nach",s_price:"Preis",s_guests:"Gäste",s_rating:"Bewertung",clear:"Daten löschen",
+  note:"Richtpreise. Alessandro bestätigt die Verfügbarkeit per WhatsApp.",pick_in:"Anreisedatum wählen",pick_out:"Jetzt Abreise wählen",
+  cmp_h:"Unterkünfte vergleichen",noDates:"Daten wählen, um den Gesamtpreis zu sehen",forDates:"Preise für",nights:"Nächte",night1:"Nacht",avg:"Ø",tax:"+ Kurtaxe",
+  best:"Bester Preis",na:"Nicht verfügbar",tooMany:"Zu viele Gäste",minN:"Mindestaufenthalt {n} Nächte",req:"Per WhatsApp anfragen",details:"Details",
+  r_g:"Max. Gäste",r_rb:"Zimmer / Bäder",r_rt:"Bewertung",where:"Wo wir sind",addr:"Altstadt, Salerno",
+  waInfo:"Hallo Alessandro! Ich hätte gern Informationen zu {apt}.",waMsg:"Hallo Alessandro! Ich möchte {apt} vom {ci} bis {co} ({n} Nächte) für {g} Gäste buchen. Auf der Website angegebener Preis: {tot} €. Ist es verfügbar?",waGen:"Hallo Alessandro! Ich hätte gern Informationen zu Salerno Luxury Apartments."}
+};
+const LANGS=["it","en","fr","de"];
+const store={get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}}};
+let L=(()=>{const s=store.get("sla_l");if(LANGS.includes(s))return s;const n=(navigator.language||"it").slice(0,2);return LANGS.includes(n)?n:"en"})();
+const t=k=>T[L][k]??T.it[k]??k;
+const comma=()=>L==="fr"||L==="de";
+const $=id=>document.getElementById(id);
+
+/* foto: prima img/, poi Airbnb, poi colore */
+const img=(a,i,w,eager)=>{const k=i%a.foto.length,loc=`img/${a.id}-${k}${(w>=1920&&k===0)?"-hd":""}.jpg`;
+  return `<img src="${loc}" data-alt="${IMG(a.foto[k],w>=1920?1920:1200)}" alt="${a.nome}" ${eager?"":'loading="lazy"'} onerror="if(this.dataset.alt){this.src=this.dataset.alt;this.dataset.alt=''}else this.remove()">`;};
+const ph=(a,i,w,eager)=>`<div class="ph" style="--c1:#2a2520;--c2:#6b5d4b">${img(a,i,w,eager)}</div>`;
+const rating=a=>{let s=a.rating.toFixed(2).replace(/0$/,"");return comma()?s.replace(".",","):s;};
+const waUrl=m=>`https://wa.me/${WA}?text=${encodeURIComponent(m)}`;
+const minP=a=>Math.min(PREZZI[a.id].feriale,PREZZI[a.id].weekend);
+
+/* ===== hero (Duomo per primo) ===== */
+const DUOMO=APTS.find(a=>a.id==="ducale");
+const SL=[...DUOMO.foto.map((_,i)=>({a:DUOMO,i})),...APTS.filter(a=>a!==DUOMO).map(a=>({a,i:0}))];
+$("slides").innerHTML=SL.map((x,j)=>`<div class="slide ${j?"":"on"}">${ph(x.a,x.i,1920,j===0)}</div>`).join("");
+$("bannerImg").innerHTML=ph(DUOMO,1,1200);
+let sIdx=0,sTimer=null;
+function go(i){
+  sIdx=(i+SL.length)%SL.length;
+  document.querySelectorAll("#slides .slide").forEach((el,j)=>el.classList.toggle("on",j===sIdx));
+  document.querySelectorAll("#prog button").forEach((b,j)=>{b.classList.remove("on");void b.offsetWidth;b.classList.toggle("on",j===sIdx);});
+  $("cNum").textContent=String(sIdx+1).padStart(2,"0");
+  const n=$("cName");n.style.opacity=0;setTimeout(()=>{n.textContent=SL[sIdx].a.nome;n.style.opacity=1;},300);
+}
+function startSlides(){clearInterval(sTimer);sTimer=setInterval(()=>{if(page==="home")go(sIdx+1);},7000);}
+$("prog").addEventListener("click",e=>{const b=e.target.closest("button");if(b){go(+b.dataset.i);startSlides();}});
+
+/* ===== reveal ===== */
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const io="IntersectionObserver" in window?new IntersectionObserver(es=>es.forEach(en=>{
+  if(!en.isIntersecting)return; en.target.classList.add("in");
+  const c=en.target.querySelector("[data-count]");if(c)countUp(c);
+  io.unobserve(en.target);
+}),{threshold:.14,rootMargin:"0px 0px -5% 0px"}):null;
+function observe(){document.querySelectorAll(".page.show .rv:not(.in),.page.show .fade:not(.in),.page.show .clip:not(.in),.page.show .hair:not(.in),.page.show .rule:not(.in)").forEach(el=>{if(io&&!reduce)io.observe(el);else el.classList.add("in");});}
+function fmtNum(v,d){let s=v.toFixed(d);return comma()?s.replace(".",","):s;}
+function countUp(el){const to=+el.dataset.count,d=+el.dataset.dec;if(reduce){el.textContent=fmtNum(to,d);return;}
+  const t0=performance.now(),dur=2000;const step=n=>{const p=Math.min(1,(n-t0)/dur),e=1-Math.pow(1-p,4);el.textContent=fmtNum(to*e,d);if(p<1)requestAnimationFrame(step);};requestAnimationFrame(step);}
+
+/* ===== date / prezzi ===== */
+const bk={ci:null,co:null,g:2,sort:"price",view:null,focus:null};
+const pad=n=>String(n).padStart(2,"0"), iso=d=>d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
+const today=(()=>{const n=new Date();return new Date(n.getFullYear(),n.getMonth(),n.getDate())})();
+bk.view=new Date(today.getFullYear(),today.getMonth(),1);
+const addD=(d,n)=>new Date(d.getFullYear(),d.getMonth(),d.getDate()+n), nb=(a,b)=>Math.round((b-a)/864e5);
+const loc=()=>({it:"it-IT",en:"en-GB",fr:"fr-FR",de:"de-DE"})[L];
+const fmtD=(d,o)=>d.toLocaleDateString(loc(),o||{day:"numeric",month:"short"});
+const nightP=(id,d)=>{const p=PREZZI[id],w=d.getDay();return (w===5||w===6)?p.weekend:p.feriale;};
+const busy=(id,d)=>{const k=iso(d);return OCCUPATO[id].some(([a,b])=>k>=a&&k<b);};
+function quote(a){ if(!bk.ci||!bk.co) return null; const n=nb(bk.ci,bk.co); let tot=0,bz=false;
+  for(let i=0;i<n;i++){const d=addD(bk.ci,i);if(busy(a.id,d))bz=true;tot+=nightP(a.id,d);}
+  return {n,tot,avg:Math.round(tot/n),bz,short:n<MIN_NOTTI,over:bk.g>a.ospiti,tax:TASSA*bk.g*n}; }
+const allBusy=d=>APTS.every(a=>busy(a.id,d));
+
+/* ===== render: home ===== */
+function renderHome(){
+  $("prog").innerHTML=SL.map((x,i)=>`<button data-i="${i}" class="${i===sIdx?"on":""}" aria-label="${x.a.nome}"></button>`).join("");
+  $("cName").textContent=SL[sIdx].a.nome; $("cTot").textContent=String(SL.length).padStart(2,"0");
+  $("cards").innerHTML=APTS.map((a,i)=>`
+    <a class="card rv d${i}" href="#strutture-${a.id}">
+      <div class="clip"><div class="plx">${ph(a,0,1200)}</div></div>
+      <h3>${a.nome}</h3><div class="caps">${a.tag[L]}</div>
+      <div class="from">${t("from")} <b>${minP(a)} €</b> ${t("night")} · ★ ${rating(a)}</div>
+    </a>`).join("");
+}
+
+/* ===== render: strutture ===== */
+function renderStrutture(){
+  $("snav").innerHTML=APTS.map(a=>`<a href="#strutture-${a.id}" data-s="${a.id}">${a.nome}</a>`).join("");
+  $("resList").innerHTML=APTS.map((a,i)=>`
+    <section class="res" id="res-${a.id}" data-id="${a.id}">
+      <div class="res-h">
+        <div><div class="num rv">0${i+1}</div><h2 class="rv d1">${a.nome}</h2><div class="caps acc rv d2" style="margin-top:14px">${a.tag[L]}</div></div>
+        <div class="price rv d2" style="margin:0"><small>${t("from")}</small><b>${minP(a)} €</b><small>${t("night")}</small></div>
+      </div>
+      <div class="gal rv d1">${a.foto.map((_,k)=>`<div class="g" data-lb="${a.id}" data-k="${k}">${ph(a,k,1200)}${k===2?`<span class="more">${a.foto.length} ${t("photos")}</span>`:""}</div>`).join("")}</div>
+      <div class="res-b">
+        <div>
+          <p class="rv">${a.desc[L]}</p>
+          <div class="specs rv d1">
+            <div><b>${a.ospiti}</b><span>${t("sp_g")}</span></div><div><b>${a.camere}</b><span>${t("sp_r")}</span></div>
+            <div><b>${a.letti}</b><span>${t("sp_b")}</span></div><div><b>${a.bagni}</b><span>${t("sp_ba")}</span></div>
+          </div>
+          <div class="dot rv d2"><h4>${t("dot")}</h4><ul>${a.servizi.map(s=>`<li><svg viewBox="0 0 24 24">${ICON[s]||""}</svg>${t("a_"+s)}</li>`).join("")}</ul></div>
+        </div>
+        <div class="side-book rv d2">
+          <div class="caps" style="color:var(--muted)">★ ${rating(a)} · ${a.reviews} ${t("reviews")}</div>
+          <div class="hair"></div>
+          <div class="price"><small>${t("from")}</small><b>${minP(a)} €</b><small>${t("night")}</small></div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <a class="btn btn-solid" href="#prenota-${a.id}" style="justify-content:center"><span>${t("book")}</span><span class="arr"></span></a>
+            <a class="link" style="align-self:center" href="${waUrl(t("waInfo").replace("{apt}",a.nome))}" target="_blank" rel="noopener">${t("info")}<span class="arr"></span></a>
+          </div>
+        </div>
+      </div>
+    </section>`).join("");
+}
+
+/* ===== render: prenota ===== */
+function monthHTML(base){
+  const y=base.getFullYear(),m=base.getMonth(),first=new Date(y,m,1),off=(first.getDay()+6)%7,dim=new Date(y,m+1,0).getDate();
+  const dows=[0,1,2,3,4,5,6].map(i=>new Date(2024,0,1+i).toLocaleDateString(loc(),{weekday:"narrow"}));
+  let h=`<div class="month"><h4>${first.toLocaleDateString(loc(),{month:"long",year:"numeric"})}</h4><div class="dow">${dows.map(d=>`<span>${d}</span>`).join("")}</div><div class="days">`;
+  for(let i=0;i<off;i++)h+=`<div class="day"></div>`;
+  for(let d=1;d<=dim;d++){const dt=new Date(y,m,d),c=["day"];
+    if(dt<today||allBusy(dt))c.push("off");
+    if(bk.ci&&+dt===+bk.ci)c.push("s"); if(bk.co&&+dt===+bk.co)c.push("e");
+    if(bk.ci&&bk.co&&dt>bk.ci&&dt<bk.co)c.push("in");
+    h+=`<div class="${c.join(" ")}"><button data-d="${iso(dt)}">${d}</button></div>`;}
+  return h+`</div></div>`;
+}
+function renderPrenota(){
+  const m2=new Date(bk.view.getFullYear(),bk.view.getMonth()+1,1);
+  $("cMonths").innerHTML=monthHTML(bk.view)+monthHTML(m2);
+  $("cPrev").disabled=bk.view<=new Date(today.getFullYear(),today.getMonth(),1);
+  $("cHint").textContent=!bk.ci?t("pick_in"):!bk.co?t("pick_out"):`${nb(bk.ci,bk.co)} ${t("nights")}`;
+  $("pDates").textContent=bk.ci?`${fmtD(bk.ci)} → ${bk.co?fmtD(bk.co):"…"}`:"—";
+  $("gN").textContent=bk.g;
+  document.querySelectorAll("#sorts button").forEach(b=>b.classList.toggle("on",b.dataset.s===bk.sort));
+  const list=APTS.map(a=>({a,q:quote(a)}));
+  const ok=x=>x.q&&!x.q.bz&&!x.q.over&&!x.q.short;
+  list.sort((x,y)=>{
+    if(bk.sort==="guests")return y.a.ospiti-x.a.ospiti;
+    if(bk.sort==="rating")return y.a.rating-x.a.rating||y.a.reviews-x.a.reviews;
+    if(bk.ci&&bk.co){if(ok(x)!==ok(y))return ok(x)?-1:1;return x.q.tot-y.q.tot;}
+    return minP(x.a)-minP(y.a);
+  });
+  const valid=list.filter(ok), best=valid.length>1?valid.reduce((b,x)=>x.q.tot<b.q.tot?x:b).a.id:null;
+  $("cmpNote").textContent=bk.ci&&bk.co?`${t("forDates")} ${fmtD(bk.ci)} – ${fmtD(bk.co)} · ${bk.g} ${t("g")}`:t("noDates");
+  const o={day:"numeric",month:"long",year:"numeric"};
+  $("cmp").innerHTML=list.map(({a,q})=>{
+    const na=q&&(q.bz||q.over);
+    const badge=q&&q.bz?`<span class="badge no">${t("na")}</span>`:q&&q.over?`<span class="badge no">${t("tooMany")}</span>`:a.id===best?`<span class="badge">${t("best")}</span>`:"";
+    const tot=q?(q.short?`<b>—</b><small>${t("minN").replace("{n}",MIN_NOTTI)}</small>`:`<b>${q.tot} €</b><small>${q.n} ${q.n>1?t("nights"):t("night1")} · ${t("avg")} ${q.avg} € ${t("night")}</small>${TASSA?`<small>${t("tax")} ${q.tax} €</small>`:""}`)
+                 :`<small>${t("from")}</small><b>${minP(a)} €</b><small>${t("night")}</small>`;
+    const can=q&&!na&&!q.short;
+    const msg=can?t("waMsg").replace("{apt}",a.nome).replace("{ci}",fmtD(bk.ci,o)).replace("{co}",fmtD(bk.co,o)).replace("{n}",q.n).replace("{g}",bk.g).replace("{tot}",q.tot):t("waInfo").replace("{apt}",a.nome);
+    return `<div class="cc ${a.id===best?"best":""} ${na?"na":""} ${bk.focus===a.id?"focus":""}" id="cc-${a.id}">
+      ${badge}<div class="cimg">${ph(a,0,1200)}</div>
+      <div class="cbody">
+        <h3>${a.nome}</h3><div class="caps">${a.tag[L]}</div>
+        <div class="ctot">${tot}</div>
+        <div class="crows">
+          <div class="crow"><span>${t("r_g")}</span><span>${a.ospiti}</span></div>
+          <div class="crow"><span>${t("r_rb")}</span><span>${a.camere} / ${a.bagni}</span></div>
+          <div class="crow"><span>${t("r_rt")}</span><span>★ ${rating(a)} · ${a.reviews}</span></div>
+          ${CMP_KEYS.map(k=>`<div class="crow"><span>${t("a_"+k)}</span>${a.servizi.includes(k)?'<span class="y">✓</span>':'<span class="n">—</span>'}</div>`).join("")}
+        </div>
+        <div class="cact">
+          <a class="btn btn-solid" href="${waUrl(msg)}" target="_blank" rel="noopener" ${q&&!can?'aria-disabled="true"':""}><span>${q?t("req"):t("info")}</span><span class="arr"></span></a>
+          <a class="link" href="#strutture-${a.id}">${t("details")}<span class="arr"></span></a>
+        </div>
+      </div></div>`;
+  }).join("");
+}
+
+/* ===== lightbox ===== */
+let lbA=null,lbK=0;
+function lbShow(){ $("lbImg").innerHTML=ph(lbA,lbK,1920,true); $("lbC").textContent=`${lbA.nome} · ${lbK+1} / ${lbA.foto.length}`; }
+document.addEventListener("click",e=>{const g=e.target.closest("[data-lb]");if(g){lbA=APTS.find(a=>a.id===g.dataset.lb);lbK=+g.dataset.k;$("lb").hidden=false;lbShow();}});
+$("lb").addEventListener("click",e=>{
+  if(e.target.closest(".n")){lbK=(lbK+1)%lbA.foto.length;lbShow();}
+  else if(e.target.closest(".p")){lbK=(lbK-1+lbA.foto.length)%lbA.foto.length;lbShow();}
+  else if(e.target.closest(".x")||e.target.id==="lb"){$("lb").hidden=true;}
+});
+document.addEventListener("keydown",e=>{if($("lb").hidden)return;if(e.key==="Escape")$("lb").hidden=true;if(e.key==="ArrowRight"){lbK=(lbK+1)%lbA.foto.length;lbShow();}if(e.key==="ArrowLeft"){lbK=(lbK-1+lbA.foto.length)%lbA.foto.length;lbShow();}});
+
+/* ===== testi, lingua ===== */
+function renderAll(){
+  document.documentElement.lang=L;
+  document.querySelectorAll("[data-t]").forEach(el=>{const v=t(el.dataset.t);if(el.hasAttribute("data-h"))el.innerHTML=v;else el.textContent=v;});
+  document.querySelectorAll(".langs").forEach(b=>b.innerHTML=LANGS.map(l=>`<button data-l="${l}" class="${l===L?"on":""}" aria-label="${l.toUpperCase()}">${FLAGS[l]}</button>`).join(""));
+  $("waFab").href=waUrl(t("waGen"));
+  renderHome(); renderStrutture(); renderPrenota();
+  document.querySelectorAll("[data-count]").forEach(c=>{if(c.closest(".in"))c.textContent=fmtNum(+c.dataset.count,+c.dataset.dec);});
+  document.querySelectorAll(".page.show .rv,.page.show .clip,.page.show .hair,.page.show .fade").forEach(el=>{const r=el.getBoundingClientRect();if(r.bottom<innerHeight&&seenPage[page])el.classList.add("in");});
+  observe();
+}
+const seenPage={};
+
+/* ===== router ===== */
+let page="home";
+function route(){
+  const h=(location.hash.slice(1)||"home"); const [p,sub]=h.split("-");
+  page=["home","strutture","prenota"].includes(p)?p:"home";
+  document.querySelectorAll(".page").forEach(x=>x.classList.toggle("show",x.id==="p-"+page));
+  document.querySelectorAll("[data-p]").forEach(a=>a.classList.toggle("on",a.dataset.p===page));
+  $("hdr").classList.toggle("inner",page!=="home");
+  bk.focus=page==="prenota"&&sub?sub:null;
+  if(page==="prenota") renderPrenota();
+  seenPage[page]=true; observe(); onScroll();
+  if(sub&&page==="strutture"){const el=$("res-"+sub);setTimeout(()=>el&&el.scrollIntoView({behavior:"smooth"}),60);}
+  else if(sub&&page==="prenota"){window.scrollTo(0,0);setTimeout(()=>{const el=$("cc-"+sub);if(el)el.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"});},120);}
+  else window.scrollTo(0,0);
+}
+addEventListener("hashchange",route);
+
+/* ===== eventi ===== */
+document.addEventListener("click",e=>{
+  const lb=e.target.closest(".langs button");if(lb){L=lb.dataset.l;store.set("sla_l",L);renderAll();return;}
+  const db=e.target.closest("#cMonths button[data-d]");if(db){const [y,m,d]=db.dataset.d.split("-").map(Number),dt=new Date(y,m-1,d);
+    if(!bk.ci||bk.co){bk.ci=dt;bk.co=null;}else if(dt<=bk.ci){bk.ci=dt;}else{bk.co=dt;}
+    renderPrenota(); if(bk.co) setTimeout(()=>document.querySelector(".cmp-h").scrollIntoView({behavior:"smooth",block:"start"}),200); return;}
+  const sb=e.target.closest("#sorts button");if(sb){bk.sort=sb.dataset.s;renderPrenota();}
+});
+$("cPrev").onclick=()=>{bk.view=new Date(bk.view.getFullYear(),bk.view.getMonth()-1,1);renderPrenota();};
+$("cNext").onclick=()=>{bk.view=new Date(bk.view.getFullYear(),bk.view.getMonth()+1,1);renderPrenota();};
+$("gM").onclick=()=>{bk.g=Math.max(1,bk.g-1);renderPrenota();};
+$("gP").onclick=()=>{bk.g=Math.min(Math.max(...APTS.map(a=>a.ospiti)),bk.g+1);renderPrenota();};
+$("clear").onclick=()=>{bk.ci=bk.co=null;renderPrenota();};
+
+const hdr=$("hdr");let tick=false;
+function onScroll(){
+  hdr.classList.toggle("solid",page==="home"&&scrollY>innerHeight*.75);
+  if(page==="strutture"){let cur=null;document.querySelectorAll(".res").forEach(s=>{if(s.getBoundingClientRect().top<200)cur=s.dataset.id;});document.querySelectorAll("#snav a").forEach(a=>a.classList.toggle("on",a.dataset.s===cur));}
+  if(reduce)return;
+  const H=innerHeight;
+  document.querySelectorAll(".page.show .clip .plx,.page.show .banner .plx").forEach(p=>{const r=p.parentElement.getBoundingClientRect();if(r.bottom<0||r.top>H)return;const k=(r.top+r.height/2-H/2)/H;p.style.transform=`translateY(${(-k*(p.closest(".banner")?90:30)).toFixed(1)}px)`;});
+}
+addEventListener("scroll",()=>{if(tick)return;tick=true;requestAnimationFrame(()=>{onScroll();tick=false;});},{passive:true});
+
+$("yr").textContent=new Date().getFullYear();
+renderAll(); route(); go(0); startSlides();
+</script>
+</body>
+</html>
