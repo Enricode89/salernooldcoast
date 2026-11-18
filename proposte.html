@@ -413,7 +413,7 @@ function render(){
   document.getElementById("cGrid").innerHTML = APTS.map(a=>`
     <div class="card">
       <div class="car">
-        <div class="slides">${a.foto.map((_,i)=>ph(a,i,1000)).join("")}</div>
+        <div class="slides">${a.foto.map((_,i)=>ph(a,i,1200)).join("")}</div>
         <span class="rate"><span class="star">★</span> ${rating(a)} · ${a.reviews}</span>
         <button class="arw l" aria-label="${t("prev")}">‹</button><button class="arw r" aria-label="${t("next")}">›</button>
         <div class="dots">${a.foto.map((_,i)=>`<i class="${i?"":"on"}"></i>`).join("")}</div>
