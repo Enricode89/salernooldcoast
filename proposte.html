@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salerno Old Coast — 3 proposte di Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--sea:#14324a;--sea2:#1f4b6b;--soft:#e6eef3;--terra:#c4693d;--terra2:#a9532b;--sand:#f6f1e9;--sand2:#ece3d4;--ink:#1b232b;--muted:#68727c;--line:#e2dbcf;color-scheme:light only}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Outfit,system-ui,sans-serif;color:var(--ink);background:var(--sand);line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.08}
+a{color:inherit;text-decoration:none}
+button{font:inherit;border:0;background:none;cursor:pointer;color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.ph{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--c2),var(--c1))}
+.ph img{position:absolute;inset:0}
+
+/* switcher */
+.switch{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:100;display:flex;gap:4px;background:rgba(20,50,74,.92);backdrop-filter:blur(10px);padding:5px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.switch button{color:#cfdbe4;padding:9px 16px;border-radius:999px;font-size:.86rem;white-space:nowrap}
+.switch button.on{background:var(--terra);color:#fff}
+.v{display:none}.v.on{display:block}
+
+/* shared nav */
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;flex-direction:column;line-height:1}
+.brand b{font-family:"Cormorant Garamond",serif;font-size:1.45rem;font-weight:600;letter-spacing:.01em}
+.brand small{font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;margin-top:4px;color:var(--terra)}
+.menu{display:flex;gap:26px;font-size:.92rem}
+.menu a{opacity:.85}.menu a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:500;font-size:.95rem;transition:.2s}
+.b-terra{background:var(--terra);color:#fff}.b-terra:hover{background:var(--terra2)}
+.b-sea{background:var(--sea);color:#fff}
+.b-line{border:1px solid currentColor}
+.star{color:var(--terra)}
+.eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;font-weight:500;color:var(--terra)}
+
+/* ===== A: foto + ricerca ===== */
+.A .hero{position:relative;height:min(92vh,780px);color:#fff;display:flex;flex-direction:column}
+.A .hero .ph{position:absolute;inset:0}
+.A .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,25,38,.55) 0%,rgba(10,25,38,.05) 35%,rgba(10,25,38,.15) 55%,rgba(10,25,38,.8) 100%)}
+.A .hero>.wrap{position:relative;z-index:2;width:100%}
+.A .hero .brand small{color:#f5c9a8}
+.A .hero-c{margin-top:auto;padding-bottom:40px}
+.A h1{font-size:clamp(2.6rem,7vw,5.4rem);max-width:13ch;margin:12px 0 26px}
+.A h1 i{font-weight:500;color:#f5c9a8}
+.A .search{display:grid;grid-template-columns:1fr 1fr .8fr auto;background:#fff;border-radius:20px;padding:8px;gap:4px;max-width:820px;box-shadow:0 20px 50px rgba(0,0,0,.3);color:var(--ink)}
+.A .search label{display:flex;flex-direction:column;padding:8px 16px;border-radius:14px;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.A .search label:hover{background:var(--sand)}
+.A .search input,.A .search select{border:0;font:inherit;font-size:1rem;color:var(--ink);background:none;letter-spacing:0;text-transform:none;margin-top:2px;outline:none}
+.A .search .btn{border-radius:14px;padding:0 28px}
+.A .trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:18px;font-size:.9rem;opacity:.92}
+.A .sec{padding:80px 0}
+.A .sh{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:30px;flex-wrap:wrap}
+.A .sh h2{font-size:clamp(2rem,4vw,3rem);color:var(--sea)}
+.A .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.A .card .ph{aspect-ratio:4/5;border-radius:18px}
+.A .card .ph img{transition:transform .6s}
+.A .card:hover .ph img{transform:scale(1.05)}
+.A .card h3{font-size:1.5rem;color:var(--sea);margin:14px 0 2px}
+.A .card .m{font-size:.86rem;color:var(--muted)}
+.A .card .r{display:flex;justify-content:space-between;margin-top:6px;font-size:.88rem}
+.A .band{background:var(--sea);color:#fff;border-radius:24px;padding:44px;display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:30px;align-items:center}
+.A .band h3{font-size:2rem}
+.A .band b{display:block;font-family:"Cormorant Garamond",serif;font-size:2.4rem;color:#f5c9a8;line-height:1}
+.A .band span{font-size:.88rem;opacity:.8}
+
+/* ===== B: rivista ===== */
+.B{background:#fbf8f3}
+.B .nav{border-bottom:1px solid var(--line)}
+.B .nav .brand b{color:var(--sea)}
+.B .intro{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;padding:60px 0 80px}
+.B h1{font-size:clamp(3rem,7.5vw,6.2rem);color:var(--sea);letter-spacing:-.01em}
+.B h1 i{color:var(--terra);font-weight:500}
+.B .intro p{font-size:1.12rem;color:#46515b;max-width:42ch;margin:26px 0 30px;font-weight:300}
+.B .stack{position:relative;aspect-ratio:4/5}
+.B .stack .ph{position:absolute;border-radius:4px;box-shadow:0 20px 50px rgba(20,50,74,.18)}
+.B .stack .p1{inset:0 18% 14% 0}
+.B .stack .p2{width:46%;aspect-ratio:3/4;right:0;bottom:0;border:8px solid #fbf8f3}
+.B .idx{display:flex;gap:28px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow-x:auto;font-size:.9rem;color:var(--muted)}
+.B .idx a{white-space:nowrap}.B .idx a b{color:var(--terra);font-weight:500;margin-right:6px}
+.B .apt{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:center;padding:90px 0;border-bottom:1px solid var(--line)}
+.B .apt:nth-of-type(even){grid-template-columns:5fr 7fr}
+.B .apt:nth-of-type(even) .pics{order:2}
+.B .pics{display:grid;grid-template-columns:2fr 1fr;gap:10px;aspect-ratio:3/2}
+.B .pics .ph{border-radius:4px}
+.B .pics .ph:first-child{grid-row:span 2}
+.B .num{font-family:"Cormorant Garamond",serif;font-size:5rem;line-height:.8;color:var(--sand2)}
+.B .apt h2{font-size:clamp(2.2rem,4vw,3.2rem);color:var(--sea);margin:8px 0 14px}
+.B .apt p{color:#46515b;margin-bottom:20px}
+.B .facts{display:flex;gap:22px;font-size:.88rem;color:var(--muted);margin-bottom:26px;flex-wrap:wrap}
+.B .facts b{display:block;color:var(--ink);font-size:1.2rem;font-weight:500}
+.B .quote{text-align:center;padding:100px 0}
+.B .quote h2{font-size:clamp(2rem,4.5vw,3.4rem);color:var(--sea);max-width:22ch;margin:0 auto 26px;font-style:italic;font-weight:500}
+
+/* ===== C: strutture subito ===== */
+.C .top{background:var(--sea);color:#fff;padding-bottom:110px}
+.C .top .brand small{color:#f5c9a8}
+.C .top .head{display:flex;justify-content:space-between;align-items:end;gap:30px;padding-top:34px;flex-wrap:wrap}
+.C h1{font-size:clamp(2.2rem,5vw,3.8rem);max-width:16ch}
+.C h1 i{color:#f5c9a8;font-weight:500}
+.C .chips{display:flex;gap:8px;flex-wrap:wrap}
+.C .chips span{border:1px solid rgba(255,255,255,.3);padding:8px 14px;border-radius:999px;font-size:.85rem}
+.C .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:-80px}
+.C .card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 14px 40px rgba(20,50,74,.12)}
+.C .car{position:relative;aspect-ratio:16/10}
+.C .slides{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.C .slides::-webkit-scrollbar{display:none}
+.C .slides .ph{flex:0 0 100%;scroll-snap-align:start}
+.C .dots{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:6px}
+.C .dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.55)}
+.C .dots i.on{background:#fff}
+.C .arw{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;color:var(--sea);box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.C .arw.l{left:12px}.C .arw.r{right:12px}
+.C .rate{position:absolute;top:14px;left:14px;background:#fff;padding:6px 12px;border-radius:999px;font-size:.84rem;font-weight:500;box-shadow:0 4px 12px rgba(0,0,0,.12)}
+.C .bd{padding:20px 22px 22px;display:grid;grid-template-columns:1fr auto;gap:6px 16px;align-items:end}
+.C .bd h3{font-size:1.75rem;color:var(--sea)}
+.C .bd .m{grid-column:1;font-size:.88rem;color:var(--muted)}
+.C .bd .ics{grid-column:1;display:flex;gap:14px;font-size:.84rem;color:var(--ink);margin-top:6px;flex-wrap:wrap}
+.C .bd .pr{grid-row:1/4;grid-column:2;text-align:right}
+.C .bd .pr small{display:block;font-size:.78rem;color:var(--muted)}
+.C .bd .pr b{font-family:"Cormorant Garamond",serif;font-size:2rem;color:var(--sea);line-height:1}
+.C .bd .pr .btn{margin-top:10px;padding:10px 18px;font-size:.88rem}
+.C .why{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:70px 0}
+.C .why div{border-top:2px solid var(--terra);padding-top:16px}
+.C .why h3{font-size:1.5rem;color:var(--sea);margin-bottom:6px}
+.C .why p{color:var(--muted);font-size:.93rem}
+
+footer{background:var(--sea);color:#cfdbe4;padding:40px 0 90px;font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer b{font-family:"Cormorant Garamond",serif;font-size:1.3rem;color:#fff;font-weight:600}
+
+@media (max-width:900px){
+ .menu{display:none}
+ .A .cards{grid-template-columns:repeat(2,1fr)}
+ .A .band{grid-template-columns:1fr 1fr;padding:30px}
+ .A .band h3{grid-column:span 2}
+ .B .intro,.B .apt,.B .apt:nth-of-type(even){grid-template-columns:1fr;gap:28px}
+ .B .apt:nth-of-type(even) .pics{order:0}
+ .B .apt{padding:56px 0}
+ .C .grid{grid-template-columns:1fr}
+ .C .why{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+ .A .search{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ .A .search label{padding:8px 10px}
+ .A .search input{width:100%}
+ .A .search .btn{grid-column:span 2;padding:14px}
+ .A .hero{height:auto;min-height:92vh}
+ .A .cards{grid-template-columns:1fr 1fr;gap:12px}
+ .A .card h3{font-size:1.2rem}
+ .A .card .r{flex-direction:column}
+ .C .bd{grid-template-columns:1fr}
+ .C .bd .pr{grid-row:auto;grid-column:1;text-align:left;display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+ .C .bd .pr .btn{margin:0}
+ .switch button{padding:8px 11px;font-size:.8rem}
+}
+
+/* lingue */
+.langs{display:flex;gap:4px;align-items:center}
+.langs button{width:30px;height:22px;border-radius:5px;overflow:hidden;opacity:.55;transition:.2s;box-shadow:0 0 0 1px rgba(0,0,0,.12);padding:0}
+.langs button svg{display:block;width:100%;height:100%}
+.langs button.on,.langs button:hover{opacity:1;box-shadow:0 0 0 2px var(--terra)}
+.navr{display:flex;align-items:center;gap:22px}
+@media (max-width:900px){.langs button{width:26px;height:19px}}
+</style>
+</head>
+<body>
+
+<div class="switch">
+  <button data-v="A" class="on">A · Foto + ricerca</button>
+  <button data-v="B">B · Rivista</button>
+  <button data-v="C">C · Strutture subito</button>
+</div>
+
+<!-- ================= A ================= -->
+<div class="v A on" id="vA">
+  <section class="hero">
+    <div id="aHero" class="ph"></div>
+    <div class="wrap"><div class="nav" style="color:#fff">
+      <a class="brand"><b>Salerno Old Coast</b><small>Apartments</small></a>
+      <div class="navr"><nav class="menu"><a data-t="m1"></a><a data-t="m2"></a><a data-t="m3"></a><a data-t="m4"></a></nav><div class="langs"></div></div>
+    </div></div>
+    <div class="wrap hero-c">
+      <div class="eyebrow" style="color:#f5c9a8" data-t="a_eye"></div>
+      <h1 data-t="a_h1" data-h></h1>
+      <form class="search" onsubmit="event.preventDefault()">
+        <label><span data-t="in"></span><input type="date" id="aIn"></label>
+        <label><span data-t="out"></span><input type="date" id="aOut"></label>
+        <label><span data-t="guests"></span><select><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></label>
+        <button class="btn b-terra" data-t="compare"></button>
+      </form>
+      <div class="trust"><span><span class="star">★</span> <span data-t="avg"></span></span><span data-t="revs"></span><span data-t="superhost"></span></div>
+    </div>
+  </section>
+  <section class="sec"><div class="wrap">
+    <div class="sh"><div><div class="eyebrow" data-t="apts"></div><h2 data-t="choose"></h2></div><a class="btn b-line" style="color:var(--sea)" data-t="cmpall"></a></div>
+    <div class="cards" id="aCards"></div>
+  </div></section>
+  <section class="sec" style="padding-top:0"><div class="wrap">
+    <div class="band">
+      <h3 data-t="direct" data-h></h3>
+      <div><b>0 €</b><span data-t="k1"></span></div>
+      <div><b>10'</b><span data-t="k2"></span></div>
+      <div><b>24/7</b><span data-t="k3"></span></div>
+    </div>
+  </div></section>
+</div>
+
+<!-- ================= B ================= -->
+<div class="v B" id="vB">
+  <div class="wrap"><div class="nav">
+    <a class="brand"><b>Salerno Old Coast</b><small>Apartments</small></a>
+    <nav class="menu"><a data-t="m1"></a><a data-t="m2"></a><a data-t="m3"></a><a data-t="m4"></a></nav>
+    <div class="langs"></div>
+  </div></div>
+  <div class="wrap intro">
+    <div>
+      <div class="eyebrow" data-t="b_eye"></div>
+      <h1 style="margin-top:16px" data-t="b_h1" data-h></h1>
+      <p data-t="b_p"></p>
+      <a class="btn b-terra" data-t="discover"></a>
+    </div>
+    <div class="stack"><div class="ph p1" id="bP1"></div><div class="ph p2" id="bP2"></div></div>
+  </div>
+  <div class="wrap"><div class="idx" id="bIdx"></div></div>
+  <div class="wrap" id="bApts"></div>
+  <div class="quote wrap">
+    <div class="eyebrow" style="margin-bottom:18px">★ <span data-t="avgshort"></span></div>
+    <h2 data-t="b_q"></h2>
+    <a class="btn b-sea" data-t="check"></a>
+  </div>
+</div>
+
+<!-- ================= C ================= -->
+<div class="v C" id="vC">
+  <section class="top"><div class="wrap">
+    <div class="nav" style="color:#fff">
+      <a class="brand"><b>Salerno Old Coast</b><small>Apartments</small></a>
+      <div class="navr"><nav class="menu"><a data-t="m1"></a><a data-t="m2"></a><a data-t="m3"></a><a data-t="m4"></a></nav><div class="langs"></div></div>
+    </div>
+    <div class="head">
+      <h1 data-t="c_h1" data-h></h1>
+      <div class="chips"><span>★ <span data-t="avgshort"></span></span><span>Superhost</span><span data-t="selfci"></span><span data-t="bestdirect"></span></div>
+    </div>
+  </div></section>
+  <div class="wrap"><div class="grid" id="cGrid"></div>
+    <div class="why">
+      <div><h3 data-t="w1t"></h3><p data-t="w1p"></p></div>
+      <div><h3 data-t="w2t"></h3><p data-t="w2p"></p></div>
+      <div><h3 data-t="w3t"></h3><p data-t="w3p"></p></div>
+    </div>
+  </div>
+</div>
+
+<footer><div class="wrap"><b>Salerno Old Coast Apartments</b><span data-t="foot"></span></div></footer>
+
+<script>
+/* Dati strutture (da annunci Airbnb). NOMI = da inserire. */
+const IMG = (u,w)=> u.split("?")[0] + "?im_w=" + (w||1200);
+const APTS = [
+ { id:"minerva", nome:"Struttura 1", ex:"Appartamento di extra lusso nel cuore di Salerno",
+   tag:{it:"Soffitti alti · finiture di pregio",en:"High ceilings · luxury finishes",fr:"Hauts plafonds · finitions de luxe",de:"Hohe Decken · edle Ausstattung"},
+   desc:{it:"Ampio appartamento di prestigio con soffitti alti, finiture di lusso e tecnologia moderna, in un palazzo ristrutturato del centro storico vicino al Giardino della Minerva.",
+         en:"Spacious prestige apartment with high ceilings, luxury finishes and modern tech, in a renovated old-town building near the Minerva Garden.",fr:"Appartement de prestige spacieux aux hauts plafonds, finitions de luxe et technologie moderne, dans un immeuble rénové de la vieille ville près du Jardin de la Minerve.",de:"Großzügige Prestige-Wohnung mit hohen Decken, luxuriöser Ausstattung und moderner Technik in einem renovierten Altstadthaus nahe dem Minerva-Garten."},
+   ospiti:4, camere:1, letti:1, bagni:1, rating:5.0, reviews:15,
+   servizi:["wifi","cucina","workspace"], airbnb:"https://www.airbnb.it/rooms/861428179921914754",
+   foto:["https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODYxNDI4MTc5OTIxOTE0NzU0/original/c58d812f-0e91-43b4-a4af-7166667527d7.jpeg",
+         "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODYxNDI4MTc5OTIxOTE0NzU0/original/767525de-20a5-44b5-9b5c-b38704a5e9f3.jpeg",
+         "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODYxNDI4MTc5OTIxOTE0NzU0/original/bd41b19d-fa6c-4c09-9ba6-717197612011.jpeg",
+         "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODYxNDI4MTc5OTIxOTE0NzU0/original/738ae534-cdc6-4911-8474-920663b517b3.jpeg",
+         "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODYxNDI4MTc5OTIxOTE0NzU0/original/50cc2ca7-9469-4e31-98f9-e89035787143.jpeg"],
+   colore:["#1f4b6b","#6f9ab4"] },
+ { id:"settecento", nome:"Struttura 2", ex:"Appartamento di lusso nel cuore del centro di Salerno",
+   tag:{it:"Palazzo del '700 · 110 recensioni",en:"18th-century palazzo · 110 reviews",fr:"Palais du XVIIIe · 110 avis",de:"Palazzo aus dem 18. Jh. · 110 Bewertungen"},
+   desc:{it:"Appartamento ristrutturato in un palazzo storico del Settecento: camera ampia con matrimoniale e divano letto, bagno grande e cucina separata. A pochi passi da lungomare, Corso Vittorio Emanuele e traghetti.",
+         en:"Renovated apartment in an 18th-century palazzo: large bedroom with double and sofa bed, big bathroom and separate kitchen. Steps from the seafront, Corso Vittorio Emanuele and the ferries.",fr:"Appartement rénové dans un palais du XVIIIe siècle : grande chambre avec lit double et canapé-lit, grande salle de bain et cuisine séparée. À deux pas du front de mer, du Corso Vittorio Emanuele et des ferries.",de:"Renovierte Wohnung in einem Palazzo aus dem 18. Jahrhundert: großes Schlafzimmer mit Doppelbett und Schlafsofa, großes Bad und separate Küche. Wenige Schritte zur Uferpromenade, zum Corso Vittorio Emanuele und zu den Fähren."},
+   ospiti:4, camere:1, letti:2, bagni:1, rating:4.94, reviews:110,
+   servizi:["wifi","cucina","workspace","parcheggio"], airbnb:"https://www.airbnb.it/rooms/26222894",
+   foto:["https://a0.muscache.com/im/pictures/69f3a023-4b41-4160-949f-82cd9c8cf787.jpg",
+         "https://a0.muscache.com/im/pictures/8a5387d5-c356-4179-8dd9-05056ed78b0f.jpg",
+         "https://a0.muscache.com/im/pictures/c200b7d9-2ac0-4179-9856-f7855cd3487b.jpg",
+         "https://a0.muscache.com/im/pictures/e9e8d90e-450c-47e4-b98b-a1b1798dca3e.jpg",
+         "https://a0.muscache.com/im/pictures/2c2188b8-b9e4-4004-8517-5b9c8c9108c2.jpg"],
+   colore:["#c4693d","#e7c9a4"] },
+ { id:"ducale", nome:"Struttura 3", ex:"Palazzo ducale",
+   tag:{it:"8 ospiti · 2 balconi sulla piazza",en:"8 guests · 2 balconies on the square",fr:"8 personnes · 2 balcons sur la place",de:"8 Gäste · 2 Balkone zum Platz"},
+   desc:{it:"Grande appartamento di lusso con due balconi affacciati sulla piazza principale, due camere, aria condizionata in ogni stanza e ascensore. Vicino a spiaggia e traghetti, ideale per famiglie e gruppi.",
+         en:"Large luxury apartment with two balconies over the main square, two bedrooms, air conditioning in every room and a lift. Close to the beach and ferries, ideal for families and groups.",fr:"Grand appartement de luxe avec deux balcons sur la place principale, deux chambres, climatisation dans chaque pièce et ascenseur. Proche de la plage et des ferries, idéal pour familles et groupes.",de:"Große Luxuswohnung mit zwei Balkonen zum Hauptplatz, zwei Schlafzimmern, Klimaanlage in jedem Raum und Aufzug. Nahe Strand und Fähren, ideal für Familien und Gruppen."},
+   ospiti:8, camere:2, letti:4, bagni:1, rating:5.0, reviews:6,
+   servizi:["balcone","ac","ascensore","wifi","cucina","animali"], airbnb:"https://www.airbnb.it/rooms/1612245292815058256",
+   foto:["https://a0.muscache.com/im/pictures/hosting/Hosting-1612245292815058256/original/84b27bda-49dc-4df1-ade5-79cec844266a.jpeg",
+         "https://a0.muscache.com/im/pictures/hosting/Hosting-1612245292815058256/original/4aae06c1-136f-42de-b86b-cd95f45302b7.jpeg",
+         "https://a0.muscache.com/im/pictures/hosting/Hosting-1612245292815058256/original/5ed55b07-032f-483b-b98f-b92c82fa9b38.jpeg",
+         "https://a0.muscache.com/im/pictures/hosting/Hosting-1612245292815058256/original/a5104923-3a13-4417-8eae-42e2997f70f0.jpeg",
+         "https://a0.muscache.com/im/pictures/hosting/Hosting-1612245292815058256/original/096afbfb-7127-4ac9-adfc-0f4cc17ca57b.jpeg"],
+   colore:["#2f6d5f","#9cc3b4"] },
+ { id:"lungomare", nome:"Struttura 4", ex:"Appartamento di lusso Paradise nel cuore di Salerno",
+   tag:{it:"Vicino ai traghetti · 69 recensioni",en:"Near the ferries · 69 reviews",fr:"Près des ferries · 69 avis",de:"Nahe den Fähren · 69 Bewertungen"},
+   desc:{it:"Appartamento elegante e ben arredato in un palazzo di prestigio del centro, a pochi minuti a piedi dal molo dei traghetti per la Costiera, dal lungomare e dalla spiaggia.",
+         en:"Stylish, well-furnished apartment in a prestigious central building, a few minutes' walk from the Amalfi Coast ferry pier, the seafront and the beach.",fr:"Appartement élégant et bien meublé dans un immeuble de prestige du centre, à quelques minutes à pied de l'embarcadère des ferries pour la Côte amalfitaine, du front de mer et de la plage.",de:"Stilvolle, gut eingerichtete Wohnung in einem repräsentativen Gebäude im Zentrum, wenige Gehminuten vom Fähranleger zur Amalfiküste, der Promenade und dem Strand."},
+   ospiti:4, camere:1, letti:2, bagni:1, rating:4.96, reviews:69,
+   servizi:["wifi","cucina","workspace","parcheggio"], airbnb:"https://www.airbnb.it/rooms/612760200793423653",
+   foto:["https://a0.muscache.com/im/pictures/miso/Hosting-612760200793423653/original/0fd77066-37d9-4bdb-b448-2804fe09fed6.jpeg",
+         "https://a0.muscache.com/im/pictures/miso/Hosting-612760200793423653/original/0f3fbd74-9c20-4fb6-b542-0e71e6834747.jpeg",
+         "https://a0.muscache.com/im/pictures/miso/Hosting-612760200793423653/original/21ecf592-39f8-4ac0-9337-edeadb5119f5.jpeg",
+         "https://a0.muscache.com/im/pictures/miso/Hosting-612760200793423653/original/8bc29793-d084-4a8f-8d08-00a48e36816c.jpeg",
+         "https://a0.muscache.com/im/pictures/miso/Hosting-612760200793423653/original/f59f000d-e166-40ba-a9c4-8b9f5efb184e.jpeg"],
+   colore:["#6a4c7a","#c9b3d4"] }
+];
+
+const DA = {minerva:120, settecento:110, ducale:190, lungomare:115}; // prezzi "da" segnaposto
+
+const FLAGS = {
+ it:'<svg viewBox="0 0 3 2"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg>',
+ en:'<svg viewBox="0 0 60 30"><clipPath id="uk"><path d="M0 0v30h60V0z"/></clipPath><g clip-path="url(#uk)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" stroke="#C8102E" stroke-width="2.4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg>',
+ fr:'<svg viewBox="0 0 3 2"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ed2939"/></svg>',
+ de:'<svg viewBox="0 0 5 3"><rect width="5" height="1" fill="#000"/><rect y="1" width="5" height="1" fill="#dd0000"/><rect y="2" width="5" height="1" fill="#ffce00"/></svg>'
+};
+
+const T = {
+ it:{m1:"Strutture",m2:"Prenota",m3:"La zona",m4:"Contatti",a_eye:"Centro storico · Salerno",a_h1:"Quattro case di lusso <i>a due passi dal mare</i>",
+  in:"Arrivo",out:"Partenza",guests:"Ospiti",compare:"Confronta prezzi",avg:"4.9 di media su Airbnb",revs:"540 recensioni",superhost:"Superhost da 10 anni",
+  apts:"Le strutture",choose:"Scegli la tua casa",cmpall:"Confronta tutte →",direct:"Prenota diretto,<br>spendi meno",k1:"commissioni di piattaforma",k2:"a piedi dai traghetti per la Costiera",k3:"assistenza su WhatsApp",
+  b_eye:"Salerno · centro storico",b_h1:"Vivere Salerno <i>da dentro</i>",b_p:"Quattro appartamenti di pregio tra palazzi storici e lungomare. Soffitti alti, finiture di lusso e i traghetti per la Costiera a pochi minuti a piedi.",
+  discover:"Scopri le strutture",avgshort:"4.9 · 540 recensioni",b_q:"Il modo più semplice per vivere la Costiera Amalfitana da Salerno",check:"Verifica disponibilità",
+  c_h1:"Appartamenti di lusso nel <i>centro di Salerno</i>",selfci:"Self check-in",bestdirect:"Miglior prezzo diretto",
+  w1t:"Centro storico",w1p:"Lungomare, spiaggia di Santa Teresa e Corso Vittorio Emanuele a pochi minuti a piedi.",
+  w2t:"Porta della Costiera",w2p:"Traghetti per Amalfi, Positano e Capri a breve distanza dagli appartamenti.",
+  w3t:"Prenotazione diretta",w3p:"Nessuna commissione e contatto diretto su WhatsApp, prima e durante il soggiorno.",
+  foot:"Centro storico · Salerno · salernooldcoastapartments.com",
+  g:"ospiti",r1:"camera",rN:"camere",b1:"letto",bN:"letti",ba:"bagno",from:"da",night:"/notte",pernight:"a notte",reviews:"recensioni",book:"Prenota",more:"Scopri e prenota →",prev:"Indietro",next:"Avanti"},
+ en:{m1:"Apartments",m2:"Book",m3:"The area",m4:"Contact",a_eye:"Old town · Salerno",a_h1:"Four luxury homes <i>steps from the sea</i>",
+  in:"Check-in",out:"Check-out",guests:"Guests",compare:"Compare prices",avg:"4.9 average on Airbnb",revs:"540 reviews",superhost:"Superhost for 10 years",
+  apts:"The apartments",choose:"Choose your home",cmpall:"Compare all →",direct:"Book direct,<br>pay less",k1:"platform fees",k2:"walk to the Amalfi Coast ferries",k3:"WhatsApp assistance",
+  b_eye:"Salerno · old town",b_h1:"Live Salerno <i>from within</i>",b_p:"Four prestige apartments between historic palazzi and the seafront. High ceilings, luxury finishes and the Amalfi Coast ferries a few minutes' walk away.",
+  discover:"Discover the apartments",avgshort:"4.9 · 540 reviews",b_q:"The easiest way to experience the Amalfi Coast from Salerno",check:"Check availability",
+  c_h1:"Luxury apartments in the <i>heart of Salerno</i>",selfci:"Self check-in",bestdirect:"Best direct price",
+  w1t:"Old town",w1p:"Seafront, Santa Teresa beach and Corso Vittorio Emanuele a few minutes' walk away.",
+  w2t:"Gateway to the Coast",w2p:"Ferries to Amalfi, Positano and Capri a short distance from the apartments.",
+  w3t:"Direct booking",w3p:"No fees and a direct line on WhatsApp, before and during your stay.",
+  foot:"Old town · Salerno · salernooldcoastapartments.com",
+  g:"guests",r1:"bedroom",rN:"bedrooms",b1:"bed",bN:"beds",ba:"bath",from:"from",night:"/night",pernight:"per night",reviews:"reviews",book:"Book",more:"Discover & book →",prev:"Previous",next:"Next"},
+ fr:{m1:"Logements",m2:"Réserver",m3:"Le quartier",m4:"Contact",a_eye:"Centre historique · Salerne",a_h1:"Quatre maisons de luxe <i>à deux pas de la mer</i>",
+  in:"Arrivée",out:"Départ",guests:"Voyageurs",compare:"Comparer les prix",avg:"4,9 de moyenne sur Airbnb",revs:"540 avis",superhost:"Superhôte depuis 10 ans",
+  apts:"Les logements",choose:"Choisissez votre maison",cmpall:"Tout comparer →",direct:"Réservez en direct,<br>payez moins",k1:"de frais de plateforme",k2:"à pied des ferries pour la Côte",k3:"assistance sur WhatsApp",
+  b_eye:"Salerne · centre historique",b_h1:"Vivre Salerne <i>de l'intérieur</i>",b_p:"Quatre appartements de prestige entre palais historiques et front de mer. Hauts plafonds, finitions de luxe et ferries pour la Côte amalfitaine à quelques minutes à pied.",
+  discover:"Découvrir les logements",avgshort:"4,9 · 540 avis",b_q:"La façon la plus simple de vivre la Côte amalfitaine depuis Salerne",check:"Voir les disponibilités",
+  c_h1:"Appartements de luxe au <i>cœur de Salerne</i>",selfci:"Arrivée autonome",bestdirect:"Meilleur prix en direct",
+  w1t:"Centre historique",w1p:"Front de mer, plage de Santa Teresa et Corso Vittorio Emanuele à quelques minutes à pied.",
+  w2t:"Porte de la Côte",w2p:"Ferries pour Amalfi, Positano et Capri à courte distance des appartements.",
+  w3t:"Réservation directe",w3p:"Aucun frais et contact direct sur WhatsApp, avant et pendant le séjour.",
+  foot:"Centre historique · Salerne · salernooldcoastapartments.com",
+  g:"voyageurs",r1:"chambre",rN:"chambres",b1:"lit",bN:"lits",ba:"salle de bain",from:"dès",night:"/nuit",pernight:"par nuit",reviews:"avis",book:"Réserver",more:"Découvrir et réserver →",prev:"Précédent",next:"Suivant"},
+ de:{m1:"Unterkünfte",m2:"Buchen",m3:"Die Umgebung",m4:"Kontakt",a_eye:"Altstadt · Salerno",a_h1:"Vier Luxus-Domizile <i>nur Schritte vom Meer</i>",
+  in:"Anreise",out:"Abreise",guests:"Gäste",compare:"Preise vergleichen",avg:"4,9 im Schnitt auf Airbnb",revs:"540 Bewertungen",superhost:"Superhost seit 10 Jahren",
+  apts:"Die Unterkünfte",choose:"Wählen Sie Ihr Zuhause",cmpall:"Alle vergleichen →",direct:"Direkt buchen,<br>weniger zahlen",k1:"Plattformgebühren",k2:"zu Fuß zu den Fähren an die Küste",k3:"Betreuung per WhatsApp",
+  b_eye:"Salerno · Altstadt",b_h1:"Salerno <i>von innen erleben</i>",b_p:"Vier exklusive Wohnungen zwischen historischen Palazzi und Uferpromenade. Hohe Decken, edle Ausstattung und die Fähren zur Amalfiküste wenige Gehminuten entfernt.",
+  discover:"Unterkünfte entdecken",avgshort:"4,9 · 540 Bewertungen",b_q:"Der einfachste Weg, die Amalfiküste von Salerno aus zu erleben",check:"Verfügbarkeit prüfen",
+  c_h1:"Luxuswohnungen im <i>Herzen von Salerno</i>",selfci:"Self-Check-in",bestdirect:"Bester Direktpreis",
+  w1t:"Altstadt",w1p:"Uferpromenade, Strand Santa Teresa und Corso Vittorio Emanuele wenige Gehminuten entfernt.",
+  w2t:"Tor zur Küste",w2p:"Fähren nach Amalfi, Positano und Capri nur ein kurzes Stück von den Wohnungen.",
+  w3t:"Direktbuchung",w3p:"Keine Gebühren und direkter Kontakt per WhatsApp, vor und während des Aufenthalts.",
+  foot:"Altstadt · Salerno · salernooldcoastapartments.com",
+  g:"Gäste",r1:"Schlafzimmer",rN:"Schlafzimmer",b1:"Bett",bN:"Betten",ba:"Bad",from:"ab",night:"/Nacht",pernight:"pro Nacht",reviews:"Bewertungen",book:"Buchen",more:"Entdecken & buchen →",prev:"Zurück",next:"Weiter"}
+};
+const LANGS=["it","en","fr","de"];
+let L=(()=>{try{const s=localStorage.getItem("soc_l");if(LANGS.includes(s))return s}catch(e){}const n=(navigator.language||"it").slice(0,2);return LANGS.includes(n)?n:"en"})();
+const t=k=>T[L][k]??T.it[k]??k;
+
+const img = (a,i,w,eager) => `<img src="${IMG(a.foto[i%a.foto.length],w)}" alt="${a.nome}" ${eager?"":'loading="lazy"'} onerror="this.remove()">`;
+const ph = (a,i,w,cls) => `<div class="ph ${cls||""}" style="--c1:${a.colore[0]};--c2:${a.colore[1]}">${img(a,i,w)}</div>`;
+const fill = (el,a,i,w) => { el.style.cssText=`--c1:${a.colore[0]};--c2:${a.colore[1]}`; el.innerHTML=img(a,i,w,true); };
+const rating = a => (L==="fr"||L==="de"?a.rating.toFixed(2).replace(/0$/,"").replace(".",","):a.rating.toFixed(2).replace(/0$/,""));
+const beds = a => `${a.ospiti} ${t("g")} · ${a.camere} ${a.camere>1?t("rN"):t("r1")} · ${a.letti} ${a.letti>1?t("bN"):t("b1")}`;
+
+fill(document.getElementById("aHero"), APTS[2], 0, 1920);
+fill(document.getElementById("bP1"), APTS[0], 0, 1200);
+fill(document.getElementById("bP2"), APTS[1], 1, 720);
+const td=new Date(), iso=d=>d.toISOString().slice(0,10);
+document.getElementById("aIn").value=iso(new Date(td.getTime()+7*864e5));
+document.getElementById("aOut").value=iso(new Date(td.getTime()+10*864e5));
+
+function render(){
+  document.documentElement.lang=L;
+  document.querySelectorAll("[data-t]").forEach(el=>{const v=t(el.dataset.t); if(el.hasAttribute("data-h")) el.innerHTML=v; else el.textContent=v;});
+  document.querySelectorAll(".langs").forEach(box=>box.innerHTML=LANGS.map(l=>`<button data-l="${l}" class="${l===L?"on":""}" aria-label="${l.toUpperCase()}" title="${l.toUpperCase()}">${FLAGS[l]}</button>`).join(""));
+
+  document.getElementById("aCards").innerHTML = APTS.map(a=>`
+    <a class="card">${ph(a,0,720)}
+      <h3>${a.nome}</h3><div class="m">${a.tag[L]}</div>
+      <div class="r"><span>${beds(a)}</span><span><b>${t("from")} ${DA[a.id]} €</b> ${t("night")}</span></div>
+    </a>`).join("");
+
+  document.getElementById("bIdx").innerHTML = APTS.map((a,i)=>`<a href="#b-${a.id}"><b>0${i+1}</b>${a.nome}</a>`).join("");
+  document.getElementById("bApts").innerHTML = APTS.map((a,i)=>`
+    <article class="apt" id="b-${a.id}">
+      <div class="pics">${ph(a,0,1200)}${ph(a,1,720)}${ph(a,2,720)}</div>
+      <div>
+        <div class="num">0${i+1}</div>
+        <div class="eyebrow" style="margin-top:14px">${a.tag[L]}</div>
+        <h2>${a.nome}</h2>
+        <p>${a.desc[L]}</p>
+        <div class="facts"><span><b>${a.ospiti}</b>${t("g")}</span><span><b>${a.camere}</b>${a.camere>1?t("rN"):t("r1")}</span><span><b>${a.bagni}</b>${t("ba")}</span><span><b>★ ${rating(a)}</b>${a.reviews} ${t("reviews")}</span></div>
+        <a class="btn b-line" style="color:var(--sea)">${t("more")}</a>
+      </div>
+    </article>`).join("");
+
+  document.getElementById("cGrid").innerHTML = APTS.map(a=>`
+    <div class="card">
+      <div class="car">
+        <div class="slides">${a.foto.map((_,i)=>ph(a,i,1000)).join("")}</div>
+        <span class="rate"><span class="star">★</span> ${rating(a)} · ${a.reviews}</span>
+        <button class="arw l" aria-label="${t("prev")}">‹</button><button class="arw r" aria-label="${t("next")}">›</button>
+        <div class="dots">${a.foto.map((_,i)=>`<i class="${i?"":"on"}"></i>`).join("")}</div>
+      </div>
+      <div class="bd">
+        <h3>${a.nome}</h3>
+        <div class="m">${a.tag[L]}</div>
+        <div class="ics"><span>👤 ${a.ospiti} ${t("g")}</span><span>🛏 ${a.camere} ${a.camere>1?t("rN"):t("r1")}</span><span>🛁 ${a.bagni} ${t("ba")}</span></div>
+        <div class="pr"><div><small>${t("from")}</small><b>${DA[a.id]} €</b><small>${t("pernight")}</small></div><a class="btn b-terra">${t("book")}</a></div>
+      </div>
+    </div>`).join("");
+  document.querySelectorAll(".C .car").forEach(c=>{
+    const s=c.querySelector(".slides"), dots=[...c.querySelectorAll(".dots i")];
+    const go=d=>s.scrollBy({left:d*s.clientWidth,behavior:"smooth"});
+    c.querySelector(".l").onclick=()=>go(-1); c.querySelector(".r").onclick=()=>go(1);
+    s.addEventListener("scroll",()=>{const i=Math.round(s.scrollLeft/s.clientWidth);dots.forEach((d,j)=>d.classList.toggle("on",i===j))},{passive:true});
+  });
+}
+document.addEventListener("click",e=>{const b=e.target.closest(".langs button");if(!b)return;L=b.dataset.l;try{localStorage.setItem("soc_l",L)}catch(x){}render();});
+document.querySelectorAll(".switch button").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll(".switch button").forEach(x=>x.classList.toggle("on",x===b));
+  document.querySelectorAll(".v").forEach(v=>v.classList.toggle("on",v.id==="v"+b.dataset.v));
+  window.scrollTo(0,0);
+});
+render();
+</script>
+</body>
+</html>
