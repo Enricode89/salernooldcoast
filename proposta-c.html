@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it" data-theme="dark">
+<html lang="it" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -350,7 +350,7 @@ footer .brand b{font-size:2rem}
   </div>
 </div>
 
-<div class="theme" id="theme"><button data-th="dark" class="on" data-t="th_d"></button><button data-th="light" data-t="th_l"></button></div>
+
 
 <script>
 const IMG = (u,w)=> u.split("?")[0] + "?im_w=" + (w||1200);
@@ -418,22 +418,22 @@ const FLAGS = {
 const T = {
  it:{book:"Prenota",guests:"Ospiti",pick_in:"Scegli la data di arrivo",pick_out:"Ora scegli la partenza",picked:"Date selezionate",nights:"notti",night1:"notte",total:"totale",avg:"media",tax:"+ tassa di soggiorno",minN:"Soggiorno minimo {n} notti",req:"Richiedi su WhatsApp",clear:"Cancella date",note:"Prezzi indicativi. Alessandro conferma la disponibilità su WhatsApp.",selDates:"Seleziona le date",waInfo:"Ciao Alessandro! Vorrei informazioni su {apt}.",waMsg:"Ciao Alessandro! Vorrei prenotare {apt} dal {ci} al {co} ({n} notti) per {g} ospiti. Totale indicato sul sito: {tot} €. È disponibile?",waGen:"Ciao Alessandro! Vorrei informazioni sugli appartamenti Salerno Luxury Apartments.",m1:"Residenze",m2:"Prenota",m4:"Contatti",eye:"Centro storico · Salerno",h1:"Quattro case<em>nel cuore di Salerno</em>",check:"Scopri le residenze",scroll:"Scorri",
   man_eye:"La nostra ospitalità",man:"Palazzi storici, soffitti alti e il mare a pochi passi. Quattro appartamenti curati in ogni dettaglio, per vivere <em>Salerno e la Costiera</em> con calma.",
-  s1:"valutazione media",s2:"recensioni",s3:"anni di ospitalità",apts:"Le residenze",choose:"Scegli la tua casa <em>a Salerno</em>",
+  s1:"valutazione media",s2:"recensioni",s3:"anni da Superhost",apts:"Le residenze",choose:"Scegli la tua casa <em>a Salerno</em>",
   g:"ospiti",r1:"camera",rN:"camere",ba:"bagno",from:"da",night:"/ notte",reviews:"recensioni",more:"Scopri e prenota",
   avgshort:"4.9 · 540 recensioni",q:"Il modo più semplice per vivere la Costiera Amalfitana da Salerno",where:"Dove siamo",addr:"Centro storico, Salerno",th_l:"Chiaro",th_d:"Nero & Oro"},
  en:{book:"Book",guests:"Guests",pick_in:"Choose your check-in date",pick_out:"Now choose check-out",picked:"Selected dates",nights:"nights",night1:"night",total:"total",avg:"avg",tax:"+ tourist tax",minN:"Minimum stay {n} nights",req:"Request on WhatsApp",clear:"Clear dates",note:"Indicative prices. Alessandro confirms availability on WhatsApp.",selDates:"Select dates",waInfo:"Hi Alessandro! I'd like some information about {apt}.",waMsg:"Hi Alessandro! I'd like to book {apt} from {ci} to {co} ({n} nights) for {g} guests. Total shown on the website: €{tot}. Is it available?",waGen:"Hi Alessandro! I'd like some information about Salerno Luxury Apartments.",m1:"Residences",m2:"Book",m4:"Contact",eye:"Old town · Salerno",h1:"Four homes<em>in the heart of Salerno</em>",check:"Discover the residences",scroll:"Scroll",
   man_eye:"Our hospitality",man:"Historic palazzi, high ceilings and the sea a few steps away. Four apartments cared for in every detail, to enjoy <em>Salerno and the Amalfi Coast</em> at your own pace.",
-  s1:"average rating",s2:"reviews",s3:"years of hosting",apts:"The residences",choose:"Choose your home <em>in Salerno</em>",
+  s1:"average rating",s2:"reviews",s3:"years as Superhost",apts:"The residences",choose:"Choose your home <em>in Salerno</em>",
   g:"guests",r1:"bedroom",rN:"bedrooms",ba:"bath",from:"from",night:"/ night",reviews:"reviews",more:"Discover & book",
   avgshort:"4.9 · 540 reviews",q:"The easiest way to experience the Amalfi Coast from Salerno",where:"Where we are",addr:"Old town, Salerno",th_l:"Light",th_d:"Black & Gold"},
  fr:{book:"Réserver",guests:"Voyageurs",pick_in:"Choisissez la date d'arrivée",pick_out:"Choisissez maintenant le départ",picked:"Dates choisies",nights:"nuits",night1:"nuit",total:"total",avg:"moy.",tax:"+ taxe de séjour",minN:"Séjour minimum {n} nuits",req:"Demander sur WhatsApp",clear:"Effacer les dates",note:"Prix indicatifs. Alessandro confirme la disponibilité sur WhatsApp.",selDates:"Choisissez les dates",waInfo:"Bonjour Alessandro ! Je souhaite des informations sur {apt}.",waMsg:"Bonjour Alessandro ! Je souhaite réserver {apt} du {ci} au {co} ({n} nuits) pour {g} personnes. Total indiqué sur le site : {tot} €. Est-ce disponible ?",waGen:"Bonjour Alessandro ! Je souhaite des informations sur Salerno Luxury Apartments.",m1:"Résidences",m2:"Réserver",m4:"Contact",eye:"Centre historique · Salerne",h1:"Quatre maisons<em>au cœur de Salerne</em>",check:"Découvrir les résidences",scroll:"Défiler",
   man_eye:"Notre hospitalité",man:"Palais historiques, hauts plafonds et la mer à deux pas. Quatre appartements soignés dans chaque détail, pour vivre <em>Salerne et la Côte amalfitaine</em> en toute sérénité.",
-  s1:"note moyenne",s2:"avis",s3:"ans d'accueil",apts:"Les résidences",choose:"Choisissez votre maison <em>à Salerne</em>",
+  s1:"note moyenne",s2:"avis",s3:"ans Superhôte",apts:"Les résidences",choose:"Choisissez votre maison <em>à Salerne</em>",
   g:"voyageurs",r1:"chambre",rN:"chambres",ba:"salle de bain",from:"dès",night:"/ nuit",reviews:"avis",more:"Découvrir et réserver",
   avgshort:"4,9 · 540 avis",q:"La façon la plus simple de vivre la Côte amalfitaine depuis Salerne",where:"Où nous trouver",addr:"Centre historique, Salerne",th_l:"Clair",th_d:"Noir & Or"},
  de:{book:"Buchen",guests:"Gäste",pick_in:"Anreisedatum wählen",pick_out:"Jetzt Abreise wählen",picked:"Gewählte Daten",nights:"Nächte",night1:"Nacht",total:"gesamt",avg:"Ø",tax:"+ Kurtaxe",minN:"Mindestaufenthalt {n} Nächte",req:"Per WhatsApp anfragen",clear:"Daten löschen",note:"Richtpreise. Alessandro bestätigt die Verfügbarkeit per WhatsApp.",selDates:"Daten wählen",waInfo:"Hallo Alessandro! Ich hätte gern Informationen zu {apt}.",waMsg:"Hallo Alessandro! Ich möchte {apt} vom {ci} bis {co} ({n} Nächte) für {g} Gäste buchen. Auf der Website angegebener Preis: {tot} €. Ist es verfügbar?",waGen:"Hallo Alessandro! Ich hätte gern Informationen zu Salerno Luxury Apartments.",m1:"Residenzen",m2:"Buchen",m4:"Kontakt",eye:"Altstadt · Salerno",h1:"Vier Domizile<em>im Herzen von Salerno</em>",check:"Residenzen entdecken",scroll:"Scrollen",
   man_eye:"Unsere Gastfreundschaft",man:"Historische Palazzi, hohe Decken und das Meer nur wenige Schritte entfernt. Vier Wohnungen, mit Liebe zum Detail gepflegt, um <em>Salerno und die Amalfiküste</em> in Ruhe zu erleben.",
-  s1:"Durchschnittsbewertung",s2:"Bewertungen",s3:"Jahre Gastfreundschaft",apts:"Die Residenzen",choose:"Wählen Sie Ihr Zuhause <em>in Salerno</em>",
+  s1:"Durchschnittsbewertung",s2:"Bewertungen",s3:"Jahre Superhost",apts:"Die Residenzen",choose:"Wählen Sie Ihr Zuhause <em>in Salerno</em>",
   g:"Gäste",r1:"Schlafzimmer",rN:"Schlafzimmer",ba:"Bad",from:"ab",night:"/ Nacht",reviews:"Bewertungen",more:"Entdecken & buchen",
   avgshort:"4,9 · 540 Bewertungen",q:"Der einfachste Weg, die Amalfiküste von Salerno aus zu erleben",where:"Wo wir sind",addr:"Altstadt, Salerno",th_l:"Hell",th_d:"Schwarz & Gold"}
 };
@@ -585,10 +585,10 @@ function render(){
 
 /* eventi */
 document.addEventListener("click",e=>{const b=e.target.closest(".langs button");if(!b)return;L=b.dataset.l;store.set("sla_l",L);render();});
-document.getElementById("theme").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
+(document.getElementById("theme")||{addEventListener(){}}).addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
   document.documentElement.dataset.theme=b.dataset.th;store.set("sla_th",b.dataset.th);
   document.querySelectorAll("#theme button").forEach(x=>x.classList.toggle("on",x===b));});
-const savedTh=store.get("sla_th"); if(savedTh==="light"){document.documentElement.dataset.theme="light";document.querySelectorAll("#theme button").forEach(x=>x.classList.toggle("on",x.dataset.th==="light"));}
+
 
 const hdr=document.getElementById("hdr");let tick=false;
 function onScroll(){
