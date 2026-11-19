@@ -433,7 +433,7 @@ header.inner{background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-fi
       <div class="panel">
         <div class="row"><span class="lbl" data-t="dates"></span><div class="val" id="pDates">—</div></div>
         <div class="row"><span class="lbl" data-t="guests"></span><div class="step"><button id="gM">−</button><b id="gN">2</b><button id="gP">+</button></div></div>
-        <div class="row"><span class="lbl" data-t="sort"></span><div class="sorts" id="sorts"><button data-s="price" class="on" data-t="s_price"></button><button data-s="guests" data-t="s_guests"></button><button data-s="rating" data-t="s_rating"></button></div></div>
+        <div class="row"><span class="lbl" data-t="sort"></span><div class="sorts" id="sorts"><button data-s="price" data-t="s_price"></button><button data-s="guests" data-t="s_guests"></button><button data-s="rating" data-t="s_rating"></button></div></div>
       </div>
     </div>
     <div class="cmp-h"><h2 data-t="cmp_h"></h2><span id="cmpNote"></span></div>
@@ -505,6 +505,8 @@ const APTS = [
 const WA="393381885843";
 const PREZZI={minerva:{feriale:120,weekend:140},settecento:{feriale:110,weekend:130},ducale:{feriale:190,weekend:220},lungomare:{feriale:115,weekend:135}};
 const OCCUPATO={minerva:[],settecento:[],ducale:[],lungomare:[]};
+/* ORDINE strutture ovunque: Duomo, La Dolce Vita, Amalfi Gate, Positano Gate */
+const ORDINE=["ducale","minerva","settecento","lungomare"];APTS.sort((x,y)=>ORDINE.indexOf(x.id)-ORDINE.indexOf(y.id));
 /* POSIZIONI (da Airbnb, approssimate). Per precisione: compilare INDIRIZZI con via e civico */
 const POS={ducale:"40.68053,14.75654",minerva:"40.68173,14.75599",settecento:"40.6798,14.75594",lungomare:"40.67929,14.75632"};
 const INDIRIZZI={ducale:"",minerva:"",settecento:"",lungomare:""};
@@ -637,7 +639,7 @@ function countUp(el){const to=+el.dataset.count,d=+el.dataset.dec;if(reduce){el.
   const t0=performance.now(),dur=2000;const step=n=>{const p=Math.min(1,(n-t0)/dur),e=1-Math.pow(1-p,4);el.textContent=fmtNum(to*e,d);if(p<1)requestAnimationFrame(step);};requestAnimationFrame(step);}
 
 /* ===== date / prezzi ===== */
-const bk={ci:null,co:null,g:2,sort:"price",view:null,focus:null};
+const bk={ci:null,co:null,g:2,sort:"fixed",view:null,focus:null};
 const pad=n=>String(n).padStart(2,"0"), iso=d=>d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
 const today=(()=>{const n=new Date();return new Date(n.getFullYear(),n.getMonth(),n.getDate())})();
 bk.view=new Date(today.getFullYear(),today.getMonth(),1);
@@ -720,6 +722,7 @@ function renderPrenota(){
   const list=APTS.map(a=>({a,q:quote(a)}));
   const ok=x=>x.q&&!x.q.bz&&!x.q.over&&!x.q.short;
   list.sort((x,y)=>{
+    if(bk.sort==="fixed")return 0;
     if(bk.sort==="guests")return y.a.ospiti-x.a.ospiti;
     if(bk.sort==="rating")return y.a.rating-x.a.rating||y.a.reviews-x.a.reviews;
     if(bk.ci&&bk.co){if(ok(x)!==ok(y))return ok(x)?-1:1;return x.q.tot-y.q.tot;}
