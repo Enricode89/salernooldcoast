@@ -509,7 +509,7 @@ const OCCUPATO={minerva:[],settecento:[],ducale:[],lungomare:[]};
 const ORDINE=["ducale","minerva","settecento","lungomare"];APTS.sort((x,y)=>ORDINE.indexOf(x.id)-ORDINE.indexOf(y.id));
 /* POSIZIONI (da Airbnb, approssimate). Per precisione: compilare INDIRIZZI con via e civico */
 const POS={ducale:"40.68053,14.75654",minerva:"40.68173,14.75599",settecento:"40.6798,14.75594",lungomare:"40.67929,14.75632"};
-const INDIRIZZI={ducale:"",minerva:"",settecento:"",lungomare:""};
+const INDIRIZZI={ducale:"Via Torquato Tasso 1, 84121 Salerno SA",minerva:"Via Torquato Tasso 58, 84121 Salerno SA",settecento:"Vicolo dell'Angelo 3, 84121 Salerno SA",lungomare:"Vicolo Duca Ruggiero 10, 84121 Salerno SA"};
 const MIN_NOTTI=2, TASSA=3;
 
 const ICON={
@@ -609,7 +609,7 @@ const waUrl=m=>`https://wa.me/${WA}?text=${encodeURIComponent(m)}`;
 const minP=a=>Math.min(PREZZI[a.id].feriale,PREZZI[a.id].weekend);
 
 /* ===== hero (Duomo per primo) ===== */
-function renderAddr(){const el=document.getElementById("addrList");if(!el)return;el.innerHTML=APTS.map(a=>{const ad=INDIRIZZI[a.id],q=ad||POS[a.id];return `<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}" target="_blank" rel="noopener">${a.nome}<small>${ad||"Centro storico · Salerno"} ↗</small></a>`}).join("")}
+function renderAddr(){const el=document.getElementById("addrList");if(!el)return;el.innerHTML=APTS.map(a=>{const ad=INDIRIZZI[a.id],q=ad||POS[a.id];return `<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}" target="_blank" rel="noopener">${a.nome}<small>${ad?ad.replace(/, 84121 Salerno SA$/,"")+" · Salerno":"Centro storico · Salerno"} ↗</small></a>`}).join("")}
 renderAddr();
 const DUOMO=APTS.find(a=>a.id==="ducale");
 const SL=[...DUOMO.foto.slice(0,5).map((_,i)=>({a:DUOMO,i})),...APTS.filter(a=>a!==DUOMO).map(a=>({a,i:0}))];
