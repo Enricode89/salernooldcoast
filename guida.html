@@ -219,7 +219,7 @@ const T = {
   s_stay:"Il tuo soggiorno",s_out:"Check-out",s_rules:"Regole della casa",s_reach:"Come raggiungerci",s_host:"Il tuo host",s_see:"Cosa vedere",s_coast:"Esplora la Costiera",s_eat:"Dove mangiare",s_move:"Come muoversi",
   e_stay:"Informazioni utili",e_out:"Prima di partire",e_rules:"Per un soggiorno sereno",e_reach:"Indicazioni a piedi",e_host:"Sempre a disposizione",e_see:"A pochi passi",e_coast:"Dal porto di Salerno",e_eat:"I nostri consigli",e_move:"Treni, traghetti, taxi",
   guests:"Ospiti massimi",access:"Accesso",net:"Rete",pass:"Password",speed:"Velocità",copy:"Copia",copied:"Copiato",
-  ac:"Aria condizionata / riscaldamento",cot:"Culla su richiesta (a pagamento)",garage:"Parcheggio coperto custodito",pets:"Animali ammessi",kitchen:"Cucina attrezzata",
+  ac:"Aria condizionata / riscaldamento",cot:"Culla su richiesta (a pagamento)",garage:"Parcheggio coperto custodito",pets:"Animali ammessi",kitchen:"Cucina attrezzata",tv:"Smart TV",washer:"Lavatrice",coffee:"Macchina del caffè",
   smoke:"Fumo",party:"Feste ed eventi",quiet:"Silenzio",waste:"Raccolta differenziata",no:"Non consentito",yes:"Consentito",
   tbd:"In aggiornamento",from_station:"Dalla stazione di Salerno",from_port:"Dal Molo Manfredi",from_bus:"Da Piazza della Concordia",
   host_resp:"Risponde entro un'ora",write:"Scrivi su WhatsApp",call:"Chiama",tickets:"Orari e biglietti",
@@ -236,7 +236,7 @@ const T = {
   s_stay:"Your stay",s_out:"Check-out",s_rules:"House rules",s_reach:"How to reach us",s_host:"Your host",s_see:"What to see",s_coast:"Explore the Amalfi Coast",s_eat:"Where to eat",s_move:"Getting around",
   e_stay:"Useful information",e_out:"Before you leave",e_rules:"For a relaxed stay",e_reach:"Walking directions",e_host:"Always available",e_see:"A short walk away",e_coast:"From Salerno harbour",e_eat:"Our picks",e_move:"Trains, ferries, taxis",
   guests:"Max guests",access:"Access",net:"Network",pass:"Password",speed:"Speed",copy:"Copy",copied:"Copied",
-  ac:"Air conditioning / heating",cot:"Baby cot on request (extra charge)",garage:"Covered, attended parking",pets:"Pets allowed",kitchen:"Equipped kitchen",
+  ac:"Air conditioning / heating",cot:"Baby cot on request (extra charge)",garage:"Covered, attended parking",pets:"Pets allowed",kitchen:"Equipped kitchen",tv:"Smart TV",washer:"Washing machine",coffee:"Coffee machine",
   smoke:"Smoking",party:"Parties and events",quiet:"Quiet hours",waste:"Waste sorting",no:"Not allowed",yes:"Allowed",
   tbd:"Coming soon",from_station:"From Salerno station",from_port:"From Molo Manfredi",from_bus:"From Piazza della Concordia",
   host_resp:"Replies within an hour",write:"Message on WhatsApp",call:"Call",tickets:"Timetables & tickets",
@@ -305,6 +305,9 @@ function guide(a){
     <div class="card">
       ${row("❄️",t("ac"))}
       ${row("🍳",t("kitchen"))}
+      ${row("☕",t("coffee"))}
+      ${row("📺",t("tv"))}
+      ${row("🧺",t("washer"))}
       ${a.extra.map(x=>row(x.ic,esc(loc(x)))).join("")}
       ${row("🚗",t("garage"),[COMUNE.garage.prezzo,COMUNE.garage.indirizzo].filter(Boolean).join(" · "))}
       ${row("🍼",t("cot"),COMUNE.culla.prezzo)}
