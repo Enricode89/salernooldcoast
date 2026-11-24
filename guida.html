@@ -109,6 +109,14 @@ section.sec{padding-top:46px;padding-bottom:6px}
 .btns{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 14px}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;background:var(--ink);color:#f5efe4;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
 .btn.ghost{background:none;color:var(--ink);border:1px solid var(--ink)}
+.wk{display:grid;grid-template-columns:56px 1fr;border-bottom:1px solid var(--line)}
+.wk:last-child{border-bottom:0}
+.wk .d{font-family:"Cormorant Garamond",serif;font-size:1.1rem;padding:12px 0;color:var(--acc)}
+.wk .its{display:flex;flex-wrap:wrap;gap:6px;padding:10px 0;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:20px;font-size:.78rem;color:#fff;line-height:1.4}
+.chip small{opacity:.85;font-size:.72rem;white-space:nowrap}
+.wk .none{color:var(--muted);font-size:.82rem;font-style:italic}
+.wnote{color:var(--ink2);font-size:.88rem;padding:12px 0 14px;border-bottom:1px solid var(--line)}
 .gfoot{text-align:center;padding:40px 24px 20px;color:var(--muted);font-size:.82rem}
 
 /* bottom nav */
@@ -211,6 +219,25 @@ const MANGIARE = [
  {g:{it:"Caffè e pasticcerie",en:"Cafés & pastry"},ic:"☕",l:[["Landi Pasticceria","€"],["Bar Rosa Pasticceria","€"],["Dolci Ricordi","€"]]}
 ];
 
+/* Raccolta differenziata — calendario utenze domestiche Centro (Salerno) */
+const CAT = {
+ vetro:{c:"#2f6b3a",it:"Vetro",en:"Glass"},
+ carta:{c:"#1f5a8c",it:"Carta, cartone e cartoncino",en:"Paper and cardboard"},
+ indiff:{c:"#2b3135",it:"Non differenziabile",en:"Non-recyclable"},
+ plastica:{c:"#d39a2c",it:"Plastica, acciaio e alluminio",en:"Plastic, steel and aluminium"},
+ organico:{c:"#5a3a26",it:"Organico e bioplastiche compostabili",en:"Organic and compostable bioplastics"},
+ tessili:{c:"#7d5a9b",it:"Tessili",en:"Textiles"}
+};
+const RIFIUTI = [
+ {it:"Lun",en:"Mon",r:[["carta","21–04"]]},
+ {it:"Mar",en:"Tue",r:[["organico","21–04"],["tessili","21–04"]]},
+ {it:"Mer",en:"Wed",r:[["plastica","21–04"]]},
+ {it:"Gio",en:"Thu",r:[["indiff","21–24"]]},
+ {it:"Ven",en:"Fri",r:[["organico","21–04"]]},
+ {it:"Sab",en:"Sat",r:[]},
+ {it:"Dom",en:"Sun",r:[["vetro","21–04"],["organico","21–04"]]}
+];
+
 /* ============================================================ */
 const T = {
  it:{hub_eye:"Guide degli ospiti",hub_h1:"Benvenuti a <em>Salerno</em>",hub_p:"Scegli il tuo appartamento: trovi tutto quello che serve per il soggiorno, cosa vedere, dove mangiare e come muoversi.",hub_help:"Serve aiuto?",open:"Apri la guida",
@@ -221,7 +248,7 @@ const T = {
   e_stay:"Informazioni utili",e_out:"Prima di partire",e_rules:"Per un soggiorno sereno",e_reach:"Indicazioni a piedi",e_host:"Sempre a disposizione",e_see:"A pochi passi",e_coast:"Dal porto di Salerno",e_eat:"I nostri consigli",e_move:"Treni, traghetti, taxi",
   guests:"Ospiti massimi",access:"Accesso",net:"Rete",pass:"Password",speed:"Velocità",copy:"Copia",copied:"Copiato",
   ac:"Aria condizionata / riscaldamento",cot:"Culla su richiesta (a pagamento)",garage:"Parcheggio coperto custodito",pets:"Animali ammessi",kitchen:"Cucina attrezzata",tv:"Smart TV",washer:"Lavatrice",coffee:"Macchina del caffè",
-  smoke:"Fumo",party:"Feste ed eventi",quiet:"Silenzio",waste:"Raccolta differenziata",no:"Non consentito",yes:"Consentito",
+  smoke:"Fumo",party:"Feste ed eventi",quiet:"Silenzio",waste:"Raccolta differenziata",s_waste:"Raccolta differenziata",e_waste:"Calendario settimanale",waste_note:"Metti fuori i sacchetti solo nel giorno e nella fascia oraria indicati, separando i rifiuti per tipo.",waste_none:"Nessuna raccolta",no:"Non consentito",yes:"Consentito",
   tbd:"In aggiornamento",from_station:"Dalla stazione di Salerno",from_port:"Dal Molo Manfredi",from_bus:"Da Piazza della Concordia",
   host_resp:"Risponde entro un'ora",write:"Scrivi su WhatsApp",call:"Chiama",tickets:"Orari e biglietti",
   train:"Treno",train_t:"Napoli in 40 min, Roma in circa 2h30 con l'alta velocità. Regionali per il Cilento.",
@@ -238,7 +265,7 @@ const T = {
   e_stay:"Useful information",e_out:"Before you leave",e_rules:"For a relaxed stay",e_reach:"Walking directions",e_host:"Always available",e_see:"A short walk away",e_coast:"From Salerno harbour",e_eat:"Our picks",e_move:"Trains, ferries, taxis",
   guests:"Max guests",access:"Access",net:"Network",pass:"Password",speed:"Speed",copy:"Copy",copied:"Copied",
   ac:"Air conditioning / heating",cot:"Baby cot on request (extra charge)",garage:"Covered, attended parking",pets:"Pets allowed",kitchen:"Equipped kitchen",tv:"Smart TV",washer:"Washing machine",coffee:"Coffee machine",
-  smoke:"Smoking",party:"Parties and events",quiet:"Quiet hours",waste:"Waste sorting",no:"Not allowed",yes:"Allowed",
+  smoke:"Smoking",party:"Parties and events",quiet:"Quiet hours",waste:"Waste sorting",s_waste:"Waste sorting",e_waste:"Weekly schedule",waste_note:"Put the bags out only on the day and within the time slot shown, sorting waste by type.",waste_none:"No collection",no:"Not allowed",yes:"Allowed",
   tbd:"Coming soon",from_station:"From Salerno station",from_port:"From Molo Manfredi",from_bus:"From Piazza della Concordia",
   host_resp:"Replies within an hour",write:"Message on WhatsApp",call:"Call",tickets:"Timetables & tickets",
   train:"Train",train_t:"Naples in 40 min, Rome in about 2h30 by high-speed train. Regional trains to Cilento.",
@@ -324,8 +351,9 @@ function guide(a){
       ${row("🎉",t("party"),null,yn(R.feste))}
       ${row("🌙",t("quiet"),null,val(R.silenzio))}
       ${row("🐾",t("pets").split(" ")[0],null,COMUNE.animali?t("yes"):t("no"))}
-      ${row("♻️",t("waste"),COMUNE.rifiuti?esc(loc(COMUNE.rifiuti)):val(null))}
     </div>`;
+
+  const waste = `<div class="card"><div class="wnote">♻️ ${t("waste_note")}</div>${RIFIUTI.map(d=>`<div class="wk"><div class="d">${loc(d)}</div><div class="its">${d.r.length?d.r.map(([k,h])=>`<span class="chip" style="background:${CAT[k].c}">${esc(loc(CAT[k]))} <small>${h}</small></span>`).join(""):`<span class="none">${t("waste_none")}</span>`}</div></div>`).join("")}</div>`;
 
   const reach = `<div class="btns"><a class="btn" href="${M(addr)}" target="_blank" rel="noopener">📍 ${esc(a.indirizzo)}</a></div>
     <div class="card">
@@ -387,6 +415,7 @@ function guide(a){
     ${sec("s-stay","e_stay","s_stay",stay)}
     ${sec("s-out","e_out","s_out",out)}
     ${sec("s-rules","e_rules","s_rules",rules)}
+    ${sec("s-waste","e_waste","s_waste",waste)}
     ${sec("s-reach","e_reach","s_reach",reach)}
     ${sec("s-host","e_host","s_host",host)}
     ${sec("s-see","e_see","s_see",see)}
@@ -432,10 +461,10 @@ addEventListener("scroll", ()=>{
   if (!cur) return;
   const ids = ["top","s-stay","s-see","s-eat","s-move"];
   let on = "top";
-  for (const id of ["top","s-stay","s-out","s-rules","s-reach","s-host","s-see","s-coast","s-eat","s-move"]) {
+  for (const id of ["top","s-stay","s-out","s-rules","s-waste","s-reach","s-host","s-see","s-coast","s-eat","s-move"]) {
     const el = document.getElementById(id); if (el && el.getBoundingClientRect().top < innerHeight*.4) on = id;
   }
-  const map = {"s-out":"s-stay","s-rules":"s-stay","s-reach":"s-stay","s-host":"s-stay","s-coast":"s-see"};
+  const map = {"s-out":"s-stay","s-rules":"s-stay","s-waste":"s-stay","s-reach":"s-stay","s-host":"s-stay","s-coast":"s-see"};
   on = map[on] || on;
   document.querySelectorAll(".bnav a").forEach(x=>x.classList.toggle("on", x.dataset.sec===on));
 }, {passive:true});
