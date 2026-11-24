@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guide degli ospiti — Salerno Luxury Apartments</title>
+<meta name="description" content="Le guide per gli ospiti di Duomo, La Dolce Vita, Amalfi Gate e Positano Gate: soggiorno, regole, cosa vedere, dove mangiare e come muoversi a Salerno.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f3ec;--bg2:#efe8dc;--ink:#1c1a17;--ink2:#5d564c;--muted:#8a8275;--acc:#9a7b4f;--acc2:#b48a5a;--line:rgba(28,26,23,.14);--card:#fbf8f3;--grad:linear-gradient(90deg,#9a7b4f,#b48a5a)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:Jost,system-ui,sans-serif;font-weight:300;color:var(--ink);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.serif{font-family:"Cormorant Garamond",Georgia,serif}
+.caps{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;font-weight:400}
+.acc{color:var(--acc)}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+
+/* header */
+header{position:sticky;top:0;z-index:40;background:rgba(247,243,236,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1100px}
+.logo{display:flex;flex-direction:column;line-height:1}
+.logo b{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:1.05rem;letter-spacing:.26em;text-transform:uppercase}
+.logo i{font-family:"Cormorant Garamond",serif;font-size:.86rem;color:var(--ink2);letter-spacing:.1em;margin-top:3px}
+.langs{display:flex;gap:8px}
+.langs button{width:26px;height:18px;border-radius:2px;overflow:hidden;opacity:.45;transition:opacity .3s,box-shadow .3s}
+.langs button.on{opacity:1;box-shadow:0 0 0 1.5px var(--ink)}
+.langs svg{width:100%;height:100%;display:block}
+
+/* pages */
+.page{display:none;animation:fade .6s ease both}
+.page.show{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* hub */
+.hub-hero{text-align:center;padding:64px 0 40px}
+.eyebrow{display:inline-flex;align-items:center;gap:14px;color:var(--acc)}
+.eyebrow::before,.eyebrow::after{content:"";width:34px;height:1px;background:currentColor;opacity:.6}
+.hub-hero h1{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:clamp(2.3rem,7vw,3.6rem);line-height:1.08;margin:18px 0 14px}
+.hub-hero h1 em{color:var(--acc)}
+.hub-hero p{color:var(--ink2);max-width:520px;margin:0 auto}
+.hub{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:1100px;margin:0 auto;padding:0 24px 40px}
+.hc{position:relative;display:block;background:var(--card);border:1px solid var(--line);overflow:hidden;transition:transform .5s,box-shadow .5s}
+.hc:hover{transform:translateY(-4px);box-shadow:0 24px 50px -28px rgba(28,26,23,.45)}
+.hc .ph{aspect-ratio:4/3;overflow:hidden;background:var(--bg2)}
+.hc .ph img{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.hc:hover .ph img{transform:scale(1.05)}
+.hc .in{padding:22px 24px 24px}
+.hc .n{font-family:"Cormorant Garamond",serif;color:var(--acc);font-size:1rem}
+.hc h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:1.9rem;line-height:1.1;margin:2px 0 6px}
+.hc .ad{color:var(--ink2);font-size:.9rem}
+.hc .go{display:inline-flex;align-items:center;gap:10px;margin-top:16px;color:var(--acc)}
+.hc .go::after{content:"→";transition:transform .3s}
+.hc:hover .go::after{transform:translateX(4px)}
+.hub-foot{text-align:center;color:var(--muted);font-size:.85rem;padding:10px 24px 30px}
+.hub-foot a{color:var(--acc)}
+
+/* guide */
+.cover{position:relative;height:62vh;min-height:380px;max-height:620px;color:#f5efe4;overflow:hidden}
+.cover img{position:absolute;inset:0;animation:kb 18s ease-out both}
+@keyframes kb{from{transform:scale(1.12)}to{transform:scale(1)}}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,12,10,.15),rgba(14,12,10,.62))}
+.cover .in{position:absolute;inset:auto 0 0;z-index:2;padding:0 24px 34px;max-width:760px;margin:0 auto}
+.back{position:absolute;top:18px;left:18px;z-index:3;color:#f5efe4;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid rgba(245,239,228,.5);backdrop-filter:blur(6px);background:rgba(14,12,10,.18)}
+.badge{display:inline-block;border:1px solid rgba(245,239,228,.6);padding:4px 12px;margin-bottom:14px}
+.cover h1{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.8rem);line-height:1.02}
+.cover .ad{opacity:.9;margin-top:6px}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:var(--card);margin:-30px auto 0;position:relative;z-index:3;max-width:712px}
+.quick>*{padding:16px 10px;text-align:center;border-right:1px solid var(--line)}
+.quick>*:last-child{border-right:0}
+.quick small{display:block;color:var(--muted);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase}
+.quick b{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:1.25rem}
+.quick a b{color:var(--acc)}
+.welcome{padding:44px 0 10px;text-align:center}
+.welcome p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.35rem;line-height:1.5;color:var(--ink2)}
+.welcome .sig{font-family:Jost;font-style:normal;font-size:.8rem;margin-top:12px;color:var(--acc);letter-spacing:.2em;text-transform:uppercase}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:30px 0 10px}
+.tiles a{border:1px solid var(--line);background:var(--card);padding:16px 8px;text-align:center;font-size:.78rem;transition:border-color .3s,color .3s}
+.tiles a:hover{border-color:var(--acc);color:var(--acc)}
+.tiles span{display:block;font-size:1.4rem;margin-bottom:4px}
+
+section.sec{padding-top:46px;padding-bottom:6px}
+.sh{margin-bottom:20px}
+.sh .caps{color:var(--acc)}
+.sh h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:2rem;line-height:1.1;margin-top:6px}
+.card{background:var(--card);border:1px solid var(--line);padding:4px 20px;margin-bottom:14px}
+.row{display:flex;gap:14px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.row .ic{font-size:1.15rem;width:28px;flex:none;text-align:center;line-height:1.5}
+.row .tx{flex:1;min-width:0}
+.row .tx b{font-weight:400;display:block}
+.row .tx small{color:var(--ink2);font-size:.88rem;display:block}
+.row .val{font-family:"Cormorant Garamond",serif;font-size:1.15rem;text-align:right;white-space:nowrap}
+.tbd{color:var(--muted);font-style:italic;font-family:Jost;font-size:.85rem}
+.copy{margin-left:8px;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);border:1px solid var(--acc);padding:3px 8px}
+.link{display:inline-flex;align-items:center;gap:6px;color:var(--acc);font-size:.85rem;margin-top:4px}
+.link::after{content:"↗"}
+.steps{counter-reset:s}
+.steps .row .ic::before{counter-increment:s;content:counter(s);font-family:"Cormorant Garamond",serif;color:var(--acc);font-size:1.3rem}
+.price{color:var(--acc);font-size:.8rem;letter-spacing:.1em}
+.grp{font-family:"Cormorant Garamond",serif;font-size:1.25rem;margin:22px 0 8px;color:var(--ink)}
+.grp:first-of-type{margin-top:0}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 14px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;background:var(--ink);color:#f5efe4;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
+.btn.ghost{background:none;color:var(--ink);border:1px solid var(--ink)}
+.gfoot{text-align:center;padding:40px 24px 20px;color:var(--muted);font-size:.82rem}
+
+/* bottom nav */
+.bnav{position:fixed;inset:auto 0 0;z-index:45;background:rgba(247,243,236,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);display:none;padding-bottom:env(safe-area-inset-bottom)}
+.bnav.show{display:grid;grid-template-columns:repeat(5,1fr)}
+.bnav a{padding:10px 4px 12px;text-align:center;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.bnav a span{display:block;font-size:1.15rem;margin-bottom:2px;letter-spacing:0}
+.bnav a.on{color:var(--acc)}
+
+@media (max-width:640px){
+  .hub{grid-template-columns:1fr}
+  .quick{grid-template-columns:repeat(2,1fr);margin:-26px 16px 0}
+  .quick>*:nth-child(2){border-right:0}
+  .quick>*:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .tiles{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#home"><b>Salerno Luxury</b><i>Guest guide</i></a>
+  <div class="langs" id="langs"></div>
+</div></header>
+
+<main>
+  <div class="page" id="p-home">
+    <div class="hub-hero wrap">
+      <span class="eyebrow caps" data-t="hub_eye"></span>
+      <h1 data-th="hub_h1"></h1>
+      <p data-t="hub_p"></p>
+    </div>
+    <div class="hub" id="hub"></div>
+    <div class="hub-foot"><span data-t="hub_help"></span> <a href="https://wa.me/393381885843" target="_blank" rel="noopener">WhatsApp +39 338 188 5843</a></div>
+  </div>
+  <div class="page" id="p-guide"></div>
+</main>
+
+<nav class="bnav" id="bnav"></nav>
+
+<script>
+/* ============================================================
+   DATI DELLE STRUTTURE — completare i campi null
+   (i campi null compaiono sul sito come "In aggiornamento")
+   ============================================================ */
+const HOST = { nome:"Alessandro", wa:"393381885843", tel:"+39 338 188 5843", email:"luxuryapartmentsalerno@gmail.com", anniSuperhost:10, rating:"4.9" };
+
+const APTS = [
+ { id:"ducale", nome:"Duomo", indirizzo:"Via Torquato Tasso 1", ospiti:8,
+   checkin:null, checkout:null,              // es. "15:00", "10:00"
+   accesso:null,                             // es. {it:"Self check-in con keybox…", en:"…"}
+   wifiRete:null, wifiPass:null, wifiVel:null,// es. "Duomo_5G", "xxxx", "1 Gbps"
+   extra:[ {ic:"🌇",it:"Due balconi affacciati sulla piazza",en:"Two balconies overlooking the square"},
+           {ic:"🛗",it:"Ascensore",en:"Lift"} ] },
+ { id:"minerva", nome:"La Dolce Vita", indirizzo:"Via Torquato Tasso 58", ospiti:4,
+   checkin:null, checkout:null, accesso:null, wifiRete:null, wifiPass:null, wifiVel:null,
+   extra:[ {ic:"💻",it:"Spazio di lavoro",en:"Workspace"} ] },
+ { id:"settecento", nome:"Amalfi Gate", indirizzo:"Vicolo dell'Angelo 3", ospiti:4,
+   checkin:null, checkout:null, accesso:null, wifiRete:null, wifiPass:null, wifiVel:null,
+   extra:[ {ic:"🏛",it:"Palazzo storico del Settecento",en:"18th-century historic building"},
+           {ic:"💻",it:"Spazio di lavoro",en:"Workspace"} ] },
+ { id:"lungomare", nome:"Positano Gate", indirizzo:"Vicolo Duca Ruggiero 10", ospiti:4,
+   checkin:null, checkout:null, accesso:null, wifiRete:null, wifiPass:null, wifiVel:null,
+   extra:[ {ic:"💻",it:"Spazio di lavoro",en:"Workspace"} ] }
+];
+
+/* Uguali per tutte le strutture */
+const COMUNE = {
+  regole:{ fumo:null, feste:null, silenzio:null },   // es. fumo:false, feste:false, silenzio:"23:00–08:00"
+  animali:true,
+  checkoutPassi:null,  // es. [{it:"Lascia le chiavi nella keybox",en:"…"}, …]
+  rifiuti:null,        // es. {it:"Calendario raccolta…",en:"…"}
+  garage:{ prezzo:"70 € / settimana", indirizzo:null, prenotazione:null },
+  culla:{ prezzo:null },  // es. "10 € a soggiorno"
+  cin:{ ducale:null, minerva:null, settecento:null, lungomare:null }
+};
+
+const M = q => "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
+const DIR = (from,to) => "https://www.google.com/maps/dir/?api=1&origin="+encodeURIComponent(from)+"&destination="+encodeURIComponent(to)+"&travelmode=walking";
+
+const ATTRAZIONI = [
+ {n:"Duomo di Salerno",q:"Duomo di Salerno",it:"La cattedrale di San Matteo, con il quadriportico e il campanile normanno.",en:"St Matthew's Cathedral, with its arcaded courtyard and Norman bell tower."},
+ {n:"Cripta del Duomo",q:"Cripta del Duomo di Salerno",it:"Interamente affrescata, custodisce le reliquie di San Matteo.",en:"Fully frescoed, it holds the relics of St Matthew."},
+ {n:"Giardino della Minerva",q:"Giardino della Minerva Salerno",it:"Il primo orto botanico d'Europa, su terrazze con vista sul golfo.",en:"Europe's first botanical garden, on terraces overlooking the gulf."},
+ {n:"Palazzo Fruscione",q:"Palazzo Fruscione Salerno",it:"Palazzo medievale che ospita mostre temporanee.",en:"Medieval palace hosting temporary exhibitions."},
+ {n:"Lungomare Trieste",q:"Lungomare Trieste Salerno",it:"La passeggiata sul mare, tra palme e tramonti sul golfo.",en:"The seafront promenade, with palm trees and sunsets over the gulf."},
+ {n:"Castello di Arechi",q:"Castello di Arechi Salerno",it:"Fortezza longobarda sulla collina: la vista più bella della città.",en:"Lombard fortress on the hill: the best view of the city."}
+];
+
+const COSTIERA = [
+ {n:"Molo Masuccio Salernitano",q:"Molo Masuccio Salernitano Salerno",it:"Traghetti per Amalfi, Positano, Maiori, Minori e Capri.",en:"Ferries to Amalfi, Positano, Maiori, Minori and Capri."},
+ {n:"Molo Manfredi",q:"Molo Manfredi Salerno",it:"Aliscafi e collegamenti veloci per la Costiera e le isole.",en:"Hydrofoils and fast connections to the coast and the islands."}
+];
+const OPERATORI = [ {n:"Travelmar",u:"https://www.travelmar.it"}, {n:"Alicost",u:"https://www.alicost.it"} ];
+
+const MANGIARE = [
+ {g:{it:"Pesce",en:"Seafood"},ic:"🐟",l:[["Embarcadero","€€€"],["Trattoria da Sasà","€€"]]},
+ {g:{it:"Trattorie",en:"Trattorias"},ic:"🍝",l:[["La Botte Pazza","€€"],["Osteria Nonna Maria","€€"]]},
+ {g:{it:"Pizza",en:"Pizza"},ic:"🍕",l:[["La Smorfia","€"],["Gli Esposito","€"],["L'Antica Pizzeria da Michele","€"],["Don Antonio 1970","€"]]},
+ {g:{it:"Salumi e vino",en:"Charcuterie & wine"},ic:"🍷",l:[["Botteghelle 65","€€"],["Salumeria del Corso","€€"]]},
+ {g:{it:"Caffè e pasticcerie",en:"Cafés & pastry"},ic:"☕",l:[["Landi Pasticceria","€"],["Bar Rosa Pasticceria","€"],["Dolci Ricordi","€"]]}
+];
+
+/* ============================================================ */
+const T = {
+ it:{hub_eye:"Guide degli ospiti",hub_h1:"Benvenuti a <em>Salerno</em>",hub_p:"Scegli il tuo appartamento: trovi tutto quello che serve per il soggiorno, cosa vedere, dove mangiare e come muoversi.",hub_help:"Serve aiuto?",open:"Apri la guida",
+  back:"Tutte le guide",superhost:"Superhost da 10 anni",checkin:"Check-in",checkout:"Check-out",wifi:"Wi-Fi",map:"Mappa",open_map:"Apri",
+  welcome:"Benvenuti nella vostra casa a Salerno. Qui trovate tutto il necessario per un soggiorno sereno: per qualsiasi cosa scrivetemi, rispondo subito.",
+  t_stay:"Soggiorno",t_see:"Da vedere",t_eat:"Mangiare",t_move:"Muoversi",t_home:"Home",
+  s_stay:"Il tuo soggiorno",s_out:"Check-out",s_rules:"Regole della casa",s_reach:"Come raggiungerci",s_host:"Il tuo host",s_see:"Cosa vedere",s_coast:"Esplora la Costiera",s_eat:"Dove mangiare",s_move:"Come muoversi",
+  e_stay:"Informazioni utili",e_out:"Prima di partire",e_rules:"Per un soggiorno sereno",e_reach:"Indicazioni a piedi",e_host:"Sempre a disposizione",e_see:"A pochi passi",e_coast:"Dal porto di Salerno",e_eat:"I nostri consigli",e_move:"Treni, traghetti, taxi",
+  guests:"Ospiti massimi",access:"Accesso",net:"Rete",pass:"Password",speed:"Velocità",copy:"Copia",copied:"Copiato",
+  ac:"Aria condizionata / riscaldamento",cot:"Culla su richiesta (a pagamento)",garage:"Parcheggio coperto custodito",pets:"Animali ammessi",kitchen:"Cucina attrezzata",
+  smoke:"Fumo",party:"Feste ed eventi",quiet:"Silenzio",waste:"Raccolta differenziata",no:"Non consentito",yes:"Consentito",
+  tbd:"In aggiornamento",from_station:"Dalla stazione di Salerno",from_port:"Dal Molo Manfredi",from_bus:"Da Piazza della Concordia",
+  host_resp:"Risponde entro un'ora",write:"Scrivi su WhatsApp",call:"Chiama",tickets:"Orari e biglietti",
+  train:"Treno",train_t:"Napoli in 40 min, Roma in circa 2h30 con l'alta velocità. Regionali per il Cilento.",
+  ferry:"Traghetti e aliscafi",ferry_t:"Dal porto di Salerno per Amalfi, Positano e la Costiera; Capri in circa 1h30.",
+  taxi:"Taxi e auto",taxi_t:"Taxi in Piazza Vittorio Veneto, davanti alla stazione. Per il parcheggio custodito chiedi all'host.",
+  air:"Aeroporto",air_t:"Napoli Capodichino a 60 km (treno da Napoli Centrale o taxi). Aeroporto Salerno Costa d'Amalfi a 15 km.",
+  emerg:"Emergenze",emerg_t:"Numero unico di emergenza 112 · Guardia medica turistica: chiedi all'host.",
+  cin:"Codice CIN",foot:"Salerno Luxury Apartments · Buon soggiorno"},
+ en:{hub_eye:"Guest guides",hub_h1:"Welcome to <em>Salerno</em>",hub_p:"Choose your apartment: everything you need for your stay, what to see, where to eat and how to get around.",hub_help:"Need help?",open:"Open the guide",
+  back:"All guides",superhost:"Superhost for 10 years",checkin:"Check-in",checkout:"Check-out",wifi:"Wi-Fi",map:"Map",open_map:"Open",
+  welcome:"Welcome to your home in Salerno. Here you'll find everything you need for a relaxed stay: for anything at all, message me and I'll reply right away.",
+  t_stay:"Stay",t_see:"See",t_eat:"Eat",t_move:"Move",t_home:"Home",
+  s_stay:"Your stay",s_out:"Check-out",s_rules:"House rules",s_reach:"How to reach us",s_host:"Your host",s_see:"What to see",s_coast:"Explore the Amalfi Coast",s_eat:"Where to eat",s_move:"Getting around",
+  e_stay:"Useful information",e_out:"Before you leave",e_rules:"For a relaxed stay",e_reach:"Walking directions",e_host:"Always available",e_see:"A short walk away",e_coast:"From Salerno harbour",e_eat:"Our picks",e_move:"Trains, ferries, taxis",
+  guests:"Max guests",access:"Access",net:"Network",pass:"Password",speed:"Speed",copy:"Copy",copied:"Copied",
+  ac:"Air conditioning / heating",cot:"Baby cot on request (extra charge)",garage:"Covered, attended parking",pets:"Pets allowed",kitchen:"Equipped kitchen",
+  smoke:"Smoking",party:"Parties and events",quiet:"Quiet hours",waste:"Waste sorting",no:"Not allowed",yes:"Allowed",
+  tbd:"Coming soon",from_station:"From Salerno station",from_port:"From Molo Manfredi",from_bus:"From Piazza della Concordia",
+  host_resp:"Replies within an hour",write:"Message on WhatsApp",call:"Call",tickets:"Timetables & tickets",
+  train:"Train",train_t:"Naples in 40 min, Rome in about 2h30 by high-speed train. Regional trains to Cilento.",
+  ferry:"Ferries & hydrofoils",ferry_t:"From Salerno harbour to Amalfi, Positano and the coast; Capri in about 1h30.",
+  taxi:"Taxi & car",taxi_t:"Taxi rank in Piazza Vittorio Veneto, in front of the station. Ask the host about attended parking.",
+  air:"Airport",air_t:"Naples Capodichino is 60 km away (train from Napoli Centrale or taxi). Salerno Costa d'Amalfi airport is 15 km away.",
+  emerg:"Emergencies",emerg_t:"European emergency number 112 · Tourist medical service: ask the host.",
+  cin:"CIN code",foot:"Salerno Luxury Apartments · Enjoy your stay"}
+};
+const FLAGS={
+ it:'<svg viewBox="0 0 3 2"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg>',
+ en:'<svg viewBox="0 0 60 30"><clipPath id="u"><path d="M0,0v30h60V0z"/></clipPath><path d="M0,0v30h60V0z" fill="#012169"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" stroke="#C8102E" stroke-width="3"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg>'
+};
+
+let L = (()=>{try{const s=localStorage.getItem("sla_lang");if(s==="it"||s==="en")return s}catch(e){} return (navigator.language||"it").slice(0,2)==="it"?"it":"en"})();
+const t = k => T[L][k] ?? k;
+const loc = o => o ? (o[L] ?? o.it) : null;
+const $ = id => document.getElementById(id);
+const val = v => v ? v : `<span class="tbd">${t("tbd")}</span>`;
+const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function langs(){
+  $("langs").innerHTML = Object.keys(FLAGS).map(l=>`<button data-l="${l}" class="${l===L?"on":""}" aria-label="${l.toUpperCase()}">${FLAGS[l]}</button>`).join("");
+}
+function applyT(){
+  document.documentElement.lang = L;
+  document.querySelectorAll("[data-t]").forEach(e=>e.textContent=t(e.dataset.t));
+  document.querySelectorAll("[data-th]").forEach(e=>e.innerHTML=t(e.dataset.th));
+}
+
+function hub(){
+  $("hub").innerHTML = APTS.map((a,i)=>`
+    <a class="hc" href="#guida-${a.id}">
+      <div class="ph"><img src="img/${a.id}-0.jpg" alt="${esc(a.nome)}" loading="${i<2?"eager":"lazy"}"></div>
+      <div class="in">
+        <div class="n">0${i+1}</div>
+        <h2>${esc(a.nome)}</h2>
+        <div class="ad">${esc(a.indirizzo)} · Salerno</div>
+        <span class="go caps">${t("open")}</span>
+      </div>
+    </a>`).join("");
+}
+
+const row = (ic,title,sub,right) => `<div class="row"><div class="ic">${ic}</div><div class="tx"><b>${title}</b>${sub?`<small>${sub}</small>`:""}</div>${right!=null?`<div class="val">${right}</div>`:""}</div>`;
+const sec = (id,eye,title,body) => `<section class="sec wrap" id="${id}"><div class="sh"><div class="caps">${t(eye)}</div><h2>${t(title)}</h2></div>${body}</section>`;
+
+function guide(a){
+  const addr = a.indirizzo+", 84121 Salerno SA";
+  const i = APTS.indexOf(a);
+  const cinV = COMUNE.cin[a.id];
+  const wifiPass = a.wifiPass ? `${esc(a.wifiPass)}<button class="copy" data-copy="${esc(a.wifiPass)}">${t("copy")}</button>` : val(null);
+  const R = COMUNE.regole;
+  const yn = v => v===true?t("yes"):v===false?t("no"):val(null);
+
+  const stay = `<div class="card">
+      ${row("🔑",t("checkin"),null,val(a.checkin))}
+      ${row("🚪",t("checkout"),null,val(a.checkout))}
+      ${row("👥",t("guests"),null,a.ospiti)}
+      ${row("🔐",t("access"),a.accesso?esc(loc(a.accesso)):val(null))}
+    </div>
+    <div class="card">
+      ${row("📶",t("net"),null,val(a.wifiRete&&esc(a.wifiRete)))}
+      ${row("🔒",t("pass"),null,wifiPass)}
+      ${row("⚡",t("speed"),null,val(a.wifiVel&&esc(a.wifiVel)))}
+    </div>
+    <div class="card">
+      ${row("❄️",t("ac"))}
+      ${row("🍳",t("kitchen"))}
+      ${a.extra.map(x=>row(x.ic,esc(loc(x)))).join("")}
+      ${row("🚗",t("garage"),[COMUNE.garage.prezzo,COMUNE.garage.indirizzo].filter(Boolean).join(" · "))}
+      ${row("🍼",t("cot"),COMUNE.culla.prezzo)}
+      ${COMUNE.animali?row("🐾",t("pets")):""}
+    </div>`;
+
+  const out = COMUNE.checkoutPassi
+    ? `<div class="card steps">${COMUNE.checkoutPassi.map(p=>row("",esc(loc(p)))).join("")}</div>`
+    : `<div class="card">${row("📝",val(null))}</div>`;
+
+  const rules = `<div class="card">
+      ${row("🚭",t("smoke"),null,yn(R.fumo))}
+      ${row("🎉",t("party"),null,yn(R.feste))}
+      ${row("🌙",t("quiet"),null,val(R.silenzio))}
+      ${row("🐾",t("pets").split(" ")[0],null,COMUNE.animali?t("yes"):t("no"))}
+      ${row("♻️",t("waste"),COMUNE.rifiuti?esc(loc(COMUNE.rifiuti)):val(null))}
+      ${cinV!==undefined?row("🏷",t("cin"),null,val(cinV)):""}
+    </div>`;
+
+  const reach = `<div class="btns"><a class="btn" href="${M(addr)}" target="_blank" rel="noopener">📍 ${esc(a.indirizzo)}</a></div>
+    <div class="card">
+      ${row("🚆",t("from_station"),`<a class="link" href="${DIR("Stazione di Salerno",addr)}" target="_blank" rel="noopener">${t("open_map")}</a>`)}
+      ${row("⛴",t("from_port"),`<a class="link" href="${DIR("Molo Manfredi, Salerno",addr)}" target="_blank" rel="noopener">${t("open_map")}</a>`)}
+      ${row("🚌",t("from_bus"),`<a class="link" href="${DIR("Piazza della Concordia, Salerno",addr)}" target="_blank" rel="noopener">${t("open_map")}</a>`)}
+    </div>`;
+
+  const msg = encodeURIComponent((L==="it"?"Ciao Alessandro, sono ospite a ":"Hi Alessandro, I'm staying at ")+a.nome+". ");
+  const host = `<div class="card">
+      ${row("👤",HOST.nome,`★ ${HOST.rating} · ${t("superhost")} · ${t("host_resp")}`)}
+    </div>
+    <div class="btns">
+      <a class="btn" href="https://wa.me/${HOST.wa}?text=${msg}" target="_blank" rel="noopener">${t("write")}</a>
+      <a class="btn ghost" href="tel:${HOST.tel.replace(/\s/g,"")}">${t("call")} ${HOST.tel}</a>
+    </div>`;
+
+  const see = `<div class="card">${ATTRAZIONI.map(x=>row("🏛",x.n,`${esc(loc(x))}<br><a class="link" href="${DIR(addr,x.q)}" target="_blank" rel="noopener">${t("open_map")}</a>`)).join("")}</div>`;
+
+  const coast = `<div class="card">${COSTIERA.map(x=>row("⛵",x.n,`${esc(loc(x))}<br><a class="link" href="${M(x.q)}" target="_blank" rel="noopener">${t("open_map")}</a>`)).join("")}</div>
+    <div class="btns">${OPERATORI.map(o=>`<a class="btn ghost" href="${o.u}" target="_blank" rel="noopener">${o.n} · ${t("tickets")}</a>`).join("")}</div>`;
+
+  const eat = MANGIARE.map(g=>`<div class="grp">${g.ic} ${esc(loc(g.g))}</div><div class="card">${g.l.map(([n,p])=>row("",n,`<a class="link" href="${M(n+" Salerno")}" target="_blank" rel="noopener">${t("open_map")}</a>`,`<span class="price">${p}</span>`)).join("")}</div>`).join("");
+
+  const move = `<div class="card">
+      ${row("🚆",t("train"),t("train_t"))}
+      ${row("⛴",t("ferry"),t("ferry_t"))}
+      ${row("🚕",t("taxi"),t("taxi_t"))}
+      ${row("✈️",t("air"),t("air_t"))}
+      ${row("🆘",t("emerg"),t("emerg_t"))}
+    </div>`;
+
+  $("p-guide").innerHTML = `
+    <div class="cover" id="top">
+      <img src="img/${a.id}-0-hd.jpg" alt="${esc(a.nome)}" onerror="this.src='img/${a.id}-0.jpg'">
+      <a class="back caps" href="#home">← ${t("back")}</a>
+      <div class="in">
+        <span class="badge caps">★ ${t("superhost")}</span>
+        <h1>${esc(a.nome)}</h1>
+        <div class="ad">${esc(a.indirizzo)} · Salerno</div>
+      </div>
+    </div>
+    <div class="quick">
+      <div><small>${t("checkin")}</small><b>${a.checkin||"—"}</b></div>
+      <div><small>${t("checkout")}</small><b>${a.checkout||"—"}</b></div>
+      <div><small>${t("wifi")}</small><b>${a.wifiVel||"✓"}</b></div>
+      <a href="${M(addr)}" target="_blank" rel="noopener"><small>${t("map")}</small><b>${t("open_map")} ↗</b></a>
+    </div>
+    <div class="wrap welcome">
+      <p>“${t("welcome")}”</p>
+      <div class="sig">— ${HOST.nome}</div>
+      <div class="tiles">
+        <a href="#s-stay"><span>🏠</span>${t("t_stay")}</a>
+        <a href="#s-see"><span>🏛</span>${t("t_see")}</a>
+        <a href="#s-eat"><span>🍝</span>${t("t_eat")}</a>
+        <a href="#s-move"><span>🚆</span>${t("t_move")}</a>
+      </div>
+    </div>
+    ${sec("s-stay","e_stay","s_stay",stay)}
+    ${sec("s-out","e_out","s_out",out)}
+    ${sec("s-rules","e_rules","s_rules",rules)}
+    ${sec("s-reach","e_reach","s_reach",reach)}
+    ${sec("s-host","e_host","s_host",host)}
+    ${sec("s-see","e_see","s_see",see)}
+    ${sec("s-coast","e_coast","s_coast",coast)}
+    ${sec("s-eat","e_eat","s_eat",eat)}
+    ${sec("s-move","e_move","s_move",move)}
+    <div class="gfoot">${t("foot")}</div>`;
+
+  $("bnav").innerHTML = [["top","🏠","t_home"],["s-stay","🔑","t_stay"],["s-see","🏛","t_see"],["s-eat","🍝","t_eat"],["s-move","🚆","t_move"]]
+    .map(([id,ic,k])=>`<a href="#${id}" data-sec="${id}"><span>${ic}</span>${t(k)}</a>`).join("");
+}
+
+let cur = null;
+function route(){
+  const h = location.hash.slice(1);
+  const m = h.match(/^guida-(\w+)$/);
+  if (m && APTS.find(a=>a.id===m[1])) { cur = APTS.find(a=>a.id===m[1]); }
+  else if (h==="" || h==="home") { cur = null; }
+  else if (cur && document.getElementById(h)) { return; } // in-page anchor
+  render(); window.scrollTo(0,0);
+}
+function render(){
+  applyT(); langs();
+  $("p-home").classList.toggle("show", !cur);
+  $("p-guide").classList.toggle("show", !!cur);
+  $("bnav").classList.toggle("show", !!cur);
+  if (cur) { guide(cur); document.title = cur.nome+" — Guida · Salerno Luxury Apartments"; }
+  else { hub(); document.title = "Guide degli ospiti — Salerno Luxury Apartments"; }
+}
+
+document.addEventListener("click", e=>{
+  const lb = e.target.closest("[data-l]");
+  if (lb) { L = lb.dataset.l; try{localStorage.setItem("sla_lang",L)}catch(_){} const y = scrollY; render(); scrollTo(0,y); return; }
+  const cp = e.target.closest("[data-copy]");
+  if (cp) { navigator.clipboard?.writeText(cp.dataset.copy).then(()=>{cp.textContent=t("copied");setTimeout(()=>cp.textContent=t("copy"),1500)}); return; }
+  const a = e.target.closest('a[href^="#"]');
+  if (a && cur) {
+    const id = a.getAttribute("href").slice(1);
+    if (id!=="home" && !id.startsWith("guida-")) { e.preventDefault(); document.getElementById(id)?.scrollIntoView({behavior:"smooth"}); }
+  }
+});
+addEventListener("scroll", ()=>{
+  if (!cur) return;
+  const ids = ["top","s-stay","s-see","s-eat","s-move"];
+  let on = "top";
+  for (const id of ["top","s-stay","s-out","s-rules","s-reach","s-host","s-see","s-coast","s-eat","s-move"]) {
+    const el = document.getElementById(id); if (el && el.getBoundingClientRect().top < innerHeight*.4) on = id;
+  }
+  const map = {"s-out":"s-stay","s-rules":"s-stay","s-reach":"s-stay","s-host":"s-stay","s-coast":"s-see"};
+  on = map[on] || on;
+  document.querySelectorAll(".bnav a").forEach(x=>x.classList.toggle("on", x.dataset.sec===on));
+}, {passive:true});
+addEventListener("hashchange", route);
+route();
+</script>
+</body>
+</html>
