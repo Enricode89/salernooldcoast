@@ -182,7 +182,6 @@ const COMUNE = {
   rifiuti:null,        // es. {it:"Calendario raccolta…",en:"…"}
   garage:{ prezzo:"70 € / settimana", indirizzo:null, prenotazione:null },
   culla:{ prezzo:null },  // es. "10 € a soggiorno"
-  cin:{ ducale:null, minerva:null, settecento:null, lungomare:null }
 };
 
 const M = q => "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
@@ -229,7 +228,7 @@ const T = {
   taxi:"Taxi e auto",taxi_t:"Taxi in Piazza Vittorio Veneto, davanti alla stazione. Per il parcheggio custodito chiedi all'host.",
   air:"Aeroporto",air_t:"Napoli Capodichino a 60 km (treno da Napoli Centrale o taxi). Aeroporto Salerno Costa d'Amalfi a 15 km.",
   emerg:"Emergenze",emerg_t:"Numero unico di emergenza 112 · Guardia medica turistica: chiedi all'host.",
-  cin:"Codice CIN",foot:"Salerno Luxury Apartments · Buon soggiorno"},
+  foot:"Salerno Luxury Apartments · Buon soggiorno"},
  en:{hub_eye:"Guest guides",hub_h1:"Welcome to <em>Salerno</em>",hub_p:"Choose your apartment: everything you need for your stay, what to see, where to eat and how to get around.",hub_help:"Need help?",open:"Open the guide",
   back:"All guides",superhost:"Superhost for 10 years",checkin:"Check-in",checkout:"Check-out",wifi:"Wi-Fi",map:"Map",open_map:"Open",
   welcome:"Welcome to your home in Salerno. Here you'll find everything you need for a relaxed stay: for anything at all, message me and I'll reply right away.",
@@ -246,7 +245,7 @@ const T = {
   taxi:"Taxi & car",taxi_t:"Taxi rank in Piazza Vittorio Veneto, in front of the station. Ask the host about attended parking.",
   air:"Airport",air_t:"Naples Capodichino is 60 km away (train from Napoli Centrale or taxi). Salerno Costa d'Amalfi airport is 15 km away.",
   emerg:"Emergencies",emerg_t:"European emergency number 112 · Tourist medical service: ask the host.",
-  cin:"CIN code",foot:"Salerno Luxury Apartments · Enjoy your stay"}
+  foot:"Salerno Luxury Apartments · Enjoy your stay"}
 };
 const FLAGS={
  it:'<svg viewBox="0 0 3 2"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg>',
@@ -288,7 +287,6 @@ const sec = (id,eye,title,body) => `<section class="sec wrap" id="${id}"><div cl
 function guide(a){
   const addr = a.indirizzo+", 84121 Salerno SA";
   const i = APTS.indexOf(a);
-  const cinV = COMUNE.cin[a.id];
   const wifiPass = a.wifiPass ? `${esc(a.wifiPass)}<button class="copy" data-copy="${esc(a.wifiPass)}">${t("copy")}</button>` : val(null);
   const R = COMUNE.regole;
   const yn = v => v===true?t("yes"):v===false?t("no"):val(null);
@@ -323,7 +321,6 @@ function guide(a){
       ${row("🌙",t("quiet"),null,val(R.silenzio))}
       ${row("🐾",t("pets").split(" ")[0],null,COMUNE.animali?t("yes"):t("no"))}
       ${row("♻️",t("waste"),COMUNE.rifiuti?esc(loc(COMUNE.rifiuti)):val(null))}
-      ${cinV!==undefined?row("🏷",t("cin"),null,val(cinV)):""}
     </div>`;
 
   const reach = `<div class="btns"><a class="btn" href="${M(addr)}" target="_blank" rel="noopener">📍 ${esc(a.indirizzo)}</a></div>
