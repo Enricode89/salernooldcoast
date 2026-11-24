@@ -184,12 +184,13 @@ const APTS = [
 
 /* Uguali per tutte le strutture */
 const COMUNE = {
-  regole:{ fumo:null, feste:null, silenzio:null },   // es. fumo:false, feste:false, silenzio:"23:00–08:00"
+  regole:{ fumo:false, feste:false, silenzio:{it:"Dalle 00:00",en:"From midnight"} },
+  accesso:{it:"Self check-in: le chiavi sono nel locker della cassetta postale",en:"Self check-in: the keys are in the mailbox locker"},
   animali:true,
   checkoutPassi:[ {it:"Spegni tutto: luci, aria condizionata / riscaldamento ed elettrodomestici",en:"Switch everything off: lights, air conditioning / heating and appliances"},
                   {it:"Riponi le chiavi nella cassetta postale",en:"Leave the keys in the mailbox"} ],
   rifiuti:null,        // es. {it:"Calendario raccolta…",en:"…"}
-  garage:{ prezzo:"70 € / settimana", indirizzo:null, prenotazione:null },
+  garage:{ prezzo:"70 € / settimana", indirizzo:"Piazza della Libertà, Salerno", prenotazione:null },
   culla:{ prezzo:null },  // es. "10 € a soggiorno"
 };
 
@@ -323,7 +324,7 @@ function guide(a){
       ${row("🔑",t("checkin"),null,val(a.checkin))}
       ${row("🚪",t("checkout"),null,val(a.checkout))}
       ${row("👥",t("guests"),null,a.ospiti)}
-      ${row("🔐",t("access"),a.accesso?esc(loc(a.accesso)):val(null))}
+      ${row("🔐",t("access"),(a.accesso||COMUNE.accesso)?esc(loc(a.accesso||COMUNE.accesso)):val(null))}
     </div>
     <div class="card">
       ${row("📶",t("net"),null,val(a.wifiRete&&esc(a.wifiRete)))}
@@ -337,7 +338,7 @@ function guide(a){
       ${row("📺",t("tv"))}
       ${row("🧺",t("washer"))}
       ${a.extra.map(x=>row(x.ic,esc(loc(x)))).join("")}
-      ${row("🚗",t("garage"),[COMUNE.garage.prezzo,COMUNE.garage.indirizzo].filter(Boolean).join(" · "))}
+      ${row("🚗",t("garage"),[COMUNE.garage.prezzo,COMUNE.garage.indirizzo].filter(Boolean).join(" · ")+(COMUNE.garage.indirizzo?`<br><a class="link" href="${M(COMUNE.garage.indirizzo)}" target="_blank" rel="noopener">${t("open_map")}</a>`:""))}
       ${row("🍼",t("cot"),COMUNE.culla.prezzo)}
       ${COMUNE.animali?row("🐾",t("pets")):""}
     </div>`;
@@ -349,7 +350,7 @@ function guide(a){
   const rules = `<div class="card">
       ${row("🚭",t("smoke"),null,yn(R.fumo))}
       ${row("🎉",t("party"),null,yn(R.feste))}
-      ${row("🌙",t("quiet"),null,val(R.silenzio))}
+      ${row("🌙",t("quiet"),null,val(R.silenzio&&esc(loc(R.silenzio))))}
       ${row("🐾",t("pets").split(" ")[0],null,COMUNE.animali?t("yes"):t("no"))}
     </div>`;
 
