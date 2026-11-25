@@ -117,6 +117,16 @@ section.sec{padding-top:46px;padding-bottom:6px}
 .chip small{opacity:.85;font-size:.72rem;white-space:nowrap}
 .wk .none{color:var(--muted);font-size:.82rem;font-style:italic}
 .wnote{color:var(--ink2);font-size:.88rem;padding:12px 0 14px;border-bottom:1px solid var(--line)}
+.mv{background:var(--card);border:1px solid var(--line);padding:20px 22px 18px;margin-bottom:14px}
+.mvh{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.mvi{width:48px;height:48px;flex:none;display:grid;place-items:center;background:var(--bg2);font-size:1.5rem}
+.mvh h3{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:1.4rem}
+.mvh h3 a{color:var(--acc)}
+.mv ul{list-style:none}
+.mv li{padding:5px 0 5px 14px;position:relative;color:var(--ink2);font-size:.93rem}
+.mv li::before{content:"•";position:absolute;left:0;color:var(--acc)}
+.mv li b{font-weight:500;color:var(--ink)}
+.ul{color:var(--acc);text-decoration:underline;text-underline-offset:3px}
 .gfoot{text-align:center;padding:40px 24px 20px;color:var(--muted);font-size:.82rem}
 
 /* bottom nav */
@@ -246,15 +256,15 @@ const T = {
   welcome:"Benvenuti nella vostra casa a Salerno. Qui trovate tutto il necessario per un soggiorno sereno: per qualsiasi cosa scrivetemi, rispondo subito.",
   t_stay:"Soggiorno",t_see:"Da vedere",t_eat:"Mangiare",t_move:"Muoversi",t_home:"Home",
   s_stay:"Il tuo soggiorno",s_out:"Check-out",s_rules:"Regole della casa",s_reach:"Come raggiungerci",s_host:"Il tuo host",s_see:"Cosa vedere",s_coast:"Esplora la Costiera",s_eat:"Dove mangiare",s_move:"Come muoversi",
-  e_stay:"Informazioni utili",e_out:"Prima di partire",e_rules:"Per un soggiorno sereno",e_reach:"Indicazioni a piedi",e_host:"Sempre a disposizione",e_see:"A pochi passi",e_coast:"Dal porto di Salerno",e_eat:"I nostri consigli",e_move:"Treni, traghetti, taxi",
+  e_stay:"Informazioni utili",e_out:"Prima di partire",e_rules:"Per un soggiorno sereno",e_reach:"Indicazioni a piedi",e_host:"Sempre a disposizione",e_see:"A pochi passi",e_coast:"Dal porto di Salerno",e_eat:"I nostri consigli",e_move:"Salerno è il punto di partenza perfetto",
   guests:"Ospiti massimi",access:"Accesso",net:"Rete",pass:"Password",speed:"Velocità",copy:"Copia",copied:"Copiato",
   ac:"Aria condizionata / riscaldamento",cot:"Culla su richiesta (a pagamento)",garage:"Parcheggio coperto custodito",pets:"Animali ammessi",kitchen:"Cucina attrezzata",tv:"Smart TV",washer:"Lavatrice",coffee:"Macchina del caffè",
   smoke:"Fumo",party:"Feste ed eventi",quiet:"Silenzio",waste:"Raccolta differenziata",s_waste:"Raccolta differenziata",e_waste:"Calendario settimanale",waste_note:"Metti fuori i sacchetti solo nel giorno e nella fascia oraria indicati, separando i rifiuti per tipo.",waste_none:"Nessuna raccolta",no:"Non consentito",yes:"Consentito",
   tbd:"In aggiornamento",from_station:"Dalla stazione di Salerno",from_port:"Dal Molo Manfredi",from_bus:"Da Piazza della Concordia",
   host_resp:"Risponde entro un'ora",write:"Scrivi su WhatsApp",call:"Chiama",tickets:"Orari e biglietti",
   train:"Treno",train_t:"Napoli in 40 min, Roma in circa 2h30 con l'alta velocità. Regionali per il Cilento.",
-  ferry:"Traghetti e aliscafi",ferry_t:"Dal porto di Salerno per Amalfi, Positano e la Costiera; Capri in circa 1h30.",
-  taxi:"Taxi e auto",taxi_t:"Taxi in Piazza Vittorio Veneto, davanti alla stazione. Per il parcheggio custodito chiedi all'host.",
+  ferry:"Traghetti & Aliscafi",ferry_t:"Dal porto di Salerno per Amalfi, Positano e la Costiera; Capri in circa 1h30.",
+  taxi:"Taxi, Auto & Parcheggio",taxi_t:"Taxi in Piazza Vittorio Veneto, davanti alla stazione. Per il parcheggio custodito chiedi all'host.",
   air:"Aeroporto",air_t:"Napoli Capodichino a 60 km (treno da Napoli Centrale o taxi). Aeroporto Salerno Costa d'Amalfi a 15 km.",
   emerg:"Emergenze",emerg_t:"Numero unico di emergenza 112 · Guardia medica turistica: chiedi all'host.",
   foot:"Salerno Luxury Apartments · Buon soggiorno"},
@@ -263,7 +273,7 @@ const T = {
   welcome:"Welcome to your home in Salerno. Here you'll find everything you need for a relaxed stay: for anything at all, message me and I'll reply right away.",
   t_stay:"Stay",t_see:"See",t_eat:"Eat",t_move:"Move",t_home:"Home",
   s_stay:"Your stay",s_out:"Check-out",s_rules:"House rules",s_reach:"How to reach us",s_host:"Your host",s_see:"What to see",s_coast:"Explore the Amalfi Coast",s_eat:"Where to eat",s_move:"Getting around",
-  e_stay:"Useful information",e_out:"Before you leave",e_rules:"For a relaxed stay",e_reach:"Walking directions",e_host:"Always available",e_see:"A short walk away",e_coast:"From Salerno harbour",e_eat:"Our picks",e_move:"Trains, ferries, taxis",
+  e_stay:"Useful information",e_out:"Before you leave",e_rules:"For a relaxed stay",e_reach:"Walking directions",e_host:"Always available",e_see:"A short walk away",e_coast:"From Salerno harbour",e_eat:"Our picks",e_move:"Salerno is the perfect starting point",
   guests:"Max guests",access:"Access",net:"Network",pass:"Password",speed:"Speed",copy:"Copy",copied:"Copied",
   ac:"Air conditioning / heating",cot:"Baby cot on request (extra charge)",garage:"Covered, attended parking",pets:"Pets allowed",kitchen:"Equipped kitchen",tv:"Smart TV",washer:"Washing machine",coffee:"Coffee machine",
   smoke:"Smoking",party:"Parties and events",quiet:"Quiet hours",waste:"Waste sorting",s_waste:"Waste sorting",e_waste:"Weekly schedule",waste_note:"Put the bags out only on the day and within the time slot shown, sorting waste by type.",waste_none:"No collection",no:"Not allowed",yes:"Allowed",
@@ -271,7 +281,7 @@ const T = {
   host_resp:"Replies within an hour",write:"Message on WhatsApp",call:"Call",tickets:"Timetables & tickets",
   train:"Train",train_t:"Naples in 40 min, Rome in about 2h30 by high-speed train. Regional trains to Cilento.",
   ferry:"Ferries & hydrofoils",ferry_t:"From Salerno harbour to Amalfi, Positano and the coast; Capri in about 1h30.",
-  taxi:"Taxi & car",taxi_t:"Taxi rank in Piazza Vittorio Veneto, in front of the station. Ask the host about attended parking.",
+  taxi:"Taxi, Car & Parking",taxi_t:"Taxi rank in Piazza Vittorio Veneto, in front of the station. Ask the host about attended parking.",
   air:"Airport",air_t:"Naples Capodichino is 60 km away (train from Napoli Centrale or taxi). Salerno Costa d'Amalfi airport is 15 km away.",
   emerg:"Emergencies",emerg_t:"European emergency number 112 · Tourist medical service: ask the host.",
   foot:"Salerno Luxury Apartments · Enjoy your stay"}
@@ -379,13 +389,29 @@ function guide(a){
 
   const eat = MANGIARE.map(g=>`<div class="grp">${g.ic} ${esc(loc(g.g))}</div><div class="card">${g.l.map(([n,p])=>row("",n,`<a class="link" href="${M(n+" Salerno")}" target="_blank" rel="noopener">${t("open_map")}</a>`,`<span class="price">${p}</span>`)).join("")}</div>`).join("");
 
-  const move = `<div class="card">
-      ${row("🚆",t("train"),t("train_t"))}
-      ${row("⛴",t("ferry"),t("ferry_t"))}
-      ${row("🚕",t("taxi"),t("taxi_t"))}
-      ${row("✈️",t("air"),t("air_t"))}
-      ${row("🆘",t("emerg"),t("emerg_t"))}
-    </div>`;
+  const LK = (u,txt,ext) => `<a class="ul" href="${u}" ${u.startsWith("tel:")?"":'target="_blank" rel="noopener"'}>${txt}${ext?" ↗":""}</a>`;
+  const MV = [
+   {ic:"🚂",h:LK("https://www.trenitalia.com",t("train"),1),l:[
+     ["Napoli",{it:"40 minuti",en:"40 minutes"}],
+     ["Roma",{it:"2h30 in treno diretto",en:"2h30 by direct train"}],
+     ["Reggio Calabria",{it:"collegamento diretto",en:"direct connection"}],
+     [{it:"Costiera Cilentana",en:"Cilento Coast"},{it:"treni regionali",en:"regional trains"}]]},
+   {ic:"🚢",h:t("ferry"),l:[
+     [{it:"Porto di Salerno",en:"Salerno harbour"},{it:LK("https://www.travelmar.it","Costiera Amalfitana",1)+" (Amalfi, Positano)",en:LK("https://www.travelmar.it","Amalfi Coast",1)+" (Amalfi, Positano)"}],
+     ["Capri & Ischia",{it:"circa 1h30 (estate: servizio frequente)",en:"about 1h30 (frequent service in summer)"}],
+     ["Travelmar / Alilauro",{it:"principali compagnie",en:"main operators"}]]},
+   {ic:"🚗",h:t("taxi"),l:[
+     ["Taxi",{it:LK("tel:+39089757575","089 757575")+" oppure WhatsApp "+LK("https://wa.me/393770897575","+39 377 089 7575"),en:LK("tel:+39089757575","089 757575")+" or WhatsApp "+LK("https://wa.me/393770897575","+39 377 089 7575")}],
+     [{it:"Parcheggio consigliato",en:"Recommended parking"},{it:LK(M(COMUNE.garage.indirizzo||"Piazza della Libertà, Salerno"),"Apri su Google Maps"),en:LK(M(COMUNE.garage.indirizzo||"Piazza della Libertà, Salerno"),"Open in Google Maps")}],
+     [{it:"Noleggio auto & scooter",en:"Car & scooter rental"},LK(M("DS Rental Scooter Salerno"),"DS Rental Scooter Salerno",1)]]},
+   {ic:"✈️",h:t("air"),l:[
+     ["Napoli Capodichino (NAP)","60 km"],
+     ["Salerno Costa d'Amalfi (QSR)",{it:"15 km (voli nazionali e internazionali)",en:"15 km (domestic and international flights)"}],
+     [{it:"In treno",en:"By train"},{it:"Napoli Centrale → Salerno (40 min)",en:"Napoli Centrale → Salerno (40 min)"}],
+     [{it:"In taxi",en:"By taxi"},{it:"circa 80–90 €",en:"about €80–90"}]]}
+  ];
+  const tx = v => typeof v==="string" ? v : loc(v);
+  const move = MV.map(c=>`<div class="mv"><div class="mvh"><span class="mvi">${c.ic}</span><h3>${c.h}</h3></div><ul>${c.l.map(([k,v])=>`<li><b>${tx(k)}</b> — ${tx(v)}</li>`).join("")}</ul></div>`).join("");
 
   $("p-guide").innerHTML = `
     <div class="cover" id="top">
